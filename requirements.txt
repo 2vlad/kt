@@ -1,0 +1,4 @@
+Django==1.10.3
+MySQL-python==1.2.5
+Jinja2==2.8
+flake8==3.2.0

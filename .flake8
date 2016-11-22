@@ -1,0 +1,4 @@
+[flake8]
+# turning off checking line length as discussed in Astroshock team
+ignore = E501
+exclude = .git

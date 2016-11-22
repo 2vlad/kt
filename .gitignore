@@ -1,0 +1,19 @@
+syntax: glob
+
+.git/
+.DS_Store
+*.pyc
+*.stats.json
+.idea
+.npm-debug.log
+
+.vagrant
+Vagrantfile
+
+media/*
+static/*
+front/migrations/
+
+tools/files/migrations/
+
+node_modules/
