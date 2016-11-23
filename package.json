@@ -9,7 +9,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server",
     "build": "webpack -p",
-    "lint": "eslint ./client ./webpack.config.js -f table || true"
+    "lint": "eslint ./client ./webpack.config.js -f table || true",
+    "lint:python": "flake8"
   },
   "author": "",
   "license": "ISC"
