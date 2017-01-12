@@ -1,0 +1,11 @@
+var _ = require('underscore/underscore.js');
+var Backbone = require('backbone/backbone');
+
+var Base = require('{{ app }}/components/Base/Base');
+
+require('./{{ name }}.less');
+var template = require('./{{ name }}.jinja');
+
+module.exports = Base.extend({
+    template: template
+});

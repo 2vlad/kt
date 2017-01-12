@@ -38,6 +38,27 @@ def require(template):
     return includeraw(template)
 
 
+def bundle(name, file):
+    if settings.DEBUG:
+        with open(os.path.join(settings.BASE_DIR, 'webpack.{}.stats.json'.format(name))) as stats:
+            bundle_data = json.load(stats)
+    else:
+        bundle_data = settings.WEBPACK_BUNDLES.get(name, None)
+
+    file_data = file.split('.')
+    file_name = file_data[0]
+    file_ext = file_data[1]
+
+    chunk = bundle_data['chunks'].get(file_name, [])
+
+    try:
+        bundle_file_name = [str(f['name']) for f in chunk if str(f['name']).startswith(file_name) and str(f['name']).endswith(file_ext)][0]
+    except IndexError:
+        bundle_file_name = ''
+
+    return 'js/{}/{}'.format(name, bundle_file_name)
+
+
 def environment(**options):
     env = Environment(**options)
 
@@ -52,6 +73,7 @@ def environment(**options):
     env.filters['require'] = require
 
     env.globals.update({
+        'bundle': bundle,
         'static': staticfiles_storage.url,
         'active': active,
         'url': reverse,

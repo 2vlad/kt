@@ -1,17 +1,37 @@
 {
   "name": "starter",
   "version": "1.0.0",
-  "description": "",
+  "description": "Starter project with default structure and tools for validating code",
   "main": "plopfile.js",
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "backbone": "^1.3.3",
+    "gulp": "^3.9.1",
+    "js-cookie": "^2.1.3",
+    "svg4everybody": "^2.1.4",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.6.1",
+    "chalk": "^1.1.3",
+    "css-loader": "^0.26.1",
+    "csswring": "^5.1.1",
+    "del": "^2.2.2",
+    "extract-text-webpack-plugin": "^2.0.0-beta.4",
+    "gutil": "^1.6.4",
+    "less": "^2.7.2",
+    "less-loader": "^2.2.3",
+    "lodash.clonedeep": "^4.5.0",
+    "postcss-loader": "^1.2.2",
+    "style-loader": "^0.13.1",
+    "webpack": "^2.2.0-rc.4",
+    "webpack-bundle-tracker": "^0.2.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server",
     "build": "webpack -p",
-    "lint": "eslint ./client ./webpack.config.js -f table || true",
-    "lint:python": "flake8"
+    "lint": "flake8",
+    "start": "python manage.py runserver 0.0.0.0:8000 --settings config.settings_local"
   },
-  "author": "",
+  "author": "Astroshock team",
   "license": "ISC"
 }
