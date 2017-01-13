@@ -13,14 +13,11 @@ module.exports = Backbone.Router.extend({
     },
 
     activate: function (view, params) {
+        this.view = new view(params);
     },
 
     start: function () {
         var pushStateSupported = history && _.isFunction(history.pushState);
         Backbone.history.start({pushState: pushStateSupported});
-
-        if ($('body').hasClass('NotFoundPage')) {
-            this.activate(NotFound);
-        }
     }
 });

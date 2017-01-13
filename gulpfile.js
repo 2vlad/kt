@@ -3,6 +3,9 @@ var del = require('del');
 var path = require('path');
 var _ = require('underscore/underscore');
 var cloneDeep = require('lodash.clonedeep');
+var runSequence = require('run-sequence').use(gulp);
+
+var svgSprite = require('gulp-svg-sprite');
 
 var gulpWebpack = require('./tools/frontend/gulp.webpack.js');
 var webpackConfig = require('./webpack.config.js');
@@ -42,6 +45,31 @@ gulp.task('js-front', function () {
     gulpWebpack(webpackConfigs.front);
 });
 
+gulp.task('assets', function () {
+    gulp.src('assets/custom_libs/**/*')
+        .pipe(gulp.dest('static/custom_libs/'));
+    gulp.src('assets/img/**/*')
+        .pipe(gulp.dest('static/img'));
+    gulp.src('assets/fonts/**/*')
+        .pipe(gulp.dest('static/fonts'));
+    gulp.src('assets/favicon/**/*')
+        .pipe(gulp.dest('static/favicon'));
+    gulp.src('assets/svg/**/*')
+        .pipe(gulp.dest('static/svg'));
+});
+
+gulp.task('svg', ['svg-front']);
+
+gulp.task('svg-front', function () {
+    return gulp.src('assets/svg/front/*.svg')
+        .pipe(svgSprite({
+            mode: {
+                symbol: true
+            }
+        }))
+        .pipe(gulp.dest('static/svg/front'));
+});
+
 gulp.task('watch', function () {
     gulp.watch('assets/css/libs/**/*', {interval: 1000}, ['assets']);
     gulp.watch('assets/js/libs/**/*', {interval: 1000}, ['assets']);
@@ -49,4 +77,12 @@ gulp.task('watch', function () {
     gulp.watch('assets/fonts/**/*', {interval: 1000}, ['assets']);
 });
 
-gulp.task('default', ['setDevVars', 'js', 'watch']);
+gulp.task('default', ['setDevVars', 'js', 'svg', 'assets', 'watch']);
+
+gulp.task('test', function (callback) {
+    runSequence(['setProductionVars', 'js', 'svg', 'assets'], callback);
+});
+
+gulp.task('production', function (callback) {
+    runSequence(['setProductionVars', 'js', 'svg', 'assets'], callback);
+});

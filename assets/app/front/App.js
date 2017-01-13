@@ -3,6 +3,7 @@ var _ = require('underscore/underscore');
 
 var svg4everybody = require('svg4everybody');
 
+require('reset.css');
 require('front/style.less');
 
 var Settings = require('./Settings');

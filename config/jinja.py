@@ -56,7 +56,7 @@ def bundle(name, file):
     except IndexError:
         bundle_file_name = ''
 
-    return 'js/{}/{}'.format(name, bundle_file_name)
+    return 'app/{}/{}'.format(name, bundle_file_name)
 
 
 def environment(**options):

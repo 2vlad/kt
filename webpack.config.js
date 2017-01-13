@@ -12,7 +12,8 @@ module.exports = {
 
     resolve: {
         modules: ['node_modules',
-            path.join(__dirname, '/assets/app/')]
+            path.join(__dirname, '/assets/app/'),
+            path.join(__dirname, '/assets/custom_libs/')]
     },
 
     module: {
@@ -25,6 +26,16 @@ module.exports = {
                         'css-loader',
                         'postcss-loader',
                         'less-loader'
+                    ]
+                })
+            },
+            {
+                test: /\.css$/,
+                loader: ExtractTextPlugin.extract({
+                    fallbackLoader: 'style-loader',
+                    loader: [
+                        'css-loader',
+                        'postcss-loader'
                     ]
                 })
             }
