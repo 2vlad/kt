@@ -47,8 +47,6 @@ gulp.task('watch', function () {
     gulp.watch('assets/js/libs/**/*', {interval: 1000}, ['assets']);
     gulp.watch('assets/img/**/*', {interval: 1000}, ['assets']);
     gulp.watch('assets/fonts/**/*', {interval: 1000}, ['assets']);
-    // gulp.watch('assets/svg/front/*.svg', ['svg-front']);
-    // gulp.watch('assets/svg/control/*.svg', ['svg-control']);
 });
 
 gulp.task('default', ['setDevVars', 'js', 'watch']);
