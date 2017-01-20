@@ -23,8 +23,7 @@ window.app.els = {
     $window: $(window),
     $body: $('body'),
     $htmlBody: $('html,body'),
-    $content: $('.Content'),
-    $globalNav: $('.GlobalNav')
+    $content: $('.Content')
 };
 
 app.router = new Router();

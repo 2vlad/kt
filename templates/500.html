@@ -1,9 +1,12 @@
-front<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title></title>
 </head>
 <body>
 <strong>500 error</strong><br>
+{{ exception_value|linebreaks }}
+{{ value|linebreaks }}
+{{ traceback|linebreaks }}
 </body>
 </html>

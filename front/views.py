@@ -1,38 +1,19 @@
 # -*- coding: utf-8 -*-
 
-import sys
-import traceback
-
-from django.http import HttpResponseNotFound
-from django.shortcuts import render
-from django.template import loader, Context
-from django.http import HttpResponseServerError
-from django.template.response import TemplateResponse
+from django.views.generic import TemplateView
 
 
-def index_view(request):
-    return TemplateResponse(request, 'front/pages/Index/Index.jinja', {})
+# Базовая вьюха, от которой наследуются остальные
+class BaseView(TemplateView):
+    def get_context_data(self, **kwargs):
+        context = super(BaseView, self).get_context_data(**kwargs)
+        # Тут можно определить контекст, характерный для всех страниц сайта (например, разделы меню и т.п.)
+        return context
 
 
-def custom_500(request):
-    t = loader.get_template('500.html', using='django')
+class IndexView(BaseView):
+    template_name = 'front/pages/Index/Index.jinja'
 
-    print sys.exc_info()
-    type, value, tb = sys.exc_info()
-
-    tbf = traceback.format_exception(type, value, tb)
-    tbfs = ''
-    for tbfi in tbf:
-        tbfs += '\n' + tbfi
-
-    return HttpResponseServerError(t.render(Context({
-        'exception_value': value,
-        'value': type,
-        'tb': tbfs})))
-
-
-def custom_404(request):
-    return HttpResponseNotFound(render(request, 'front/pages/NotFound/NotFound.jinja',
-                                       {'userData': {'authenticated': request.user.is_authenticated(),
-                                                     'id': request.user.id,
-                                                     'isActive': request.user.is_active,}}))
+    def get_context_data(self, **kwargs):
+        context = super(IndexView, self).get_context_data(**kwargs)
+        return context

@@ -56,6 +56,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'front',
+    'tools.files',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -131,6 +132,16 @@ USE_L10N = True
 
 USE_TZ = True
 
+
+class Lang:
+    En = 'en'
+
+
+LANGUAGES = (
+    (Lang.En, 'English'),
+)
+
+LANGUAGES_TUPLE = (Lang.En, )
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
