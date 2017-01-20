@@ -17,3 +17,8 @@ front/migrations/
 tools/files/migrations/
 
 node_modules/
+
+*.sublime-workspace
+*.sublime-project
+
+
