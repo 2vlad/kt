@@ -6,6 +6,12 @@ var autoprefixer = require('autoprefixer');
 var csswring = require('csswring');
 
 module.exports = {
+  eslint: {
+    configFile: './.eslintrc'
+  }
+}
+
+module.exports = {
     output: {
         filename: '[name].[hash:8].js'
     },
@@ -15,9 +21,15 @@ module.exports = {
             path.join(__dirname, '/assets/app/'),
             path.join(__dirname, '/assets/custom_libs/')]
     },
-
     module: {
         rules: [
+            // Use eslint-loader as pre-loader to check source files, not modified by other loaders (like babel-loader)
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                enforce: 'pre',
+                use: [{loader: 'eslint-loader', options: {}}]
+            },
             {
                 test: /\.less$/,
                 loader: ExtractTextPlugin.extract({
@@ -41,7 +53,6 @@ module.exports = {
             }
         ]
     },
-
     plugins: [
         new webpack.ProvidePlugin({
             $: 'jquery'
@@ -61,7 +72,6 @@ module.exports = {
             allChunks: true
         })
     ],
-
     externals: {
         jquery: 'jQuery'
     }
