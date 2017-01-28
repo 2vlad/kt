@@ -23,12 +23,28 @@ module.exports = {
     },
     module: {
         rules: [
-            // Use eslint-loader as pre-loader to check source files, not modified by other loaders (like babel-loader)
+            // Используем eslint-loader как прелоадер, чтобы проверять js-исходники,
+            // не измененные другими лоадерами как, например, babel-loader-ом.
             {
                 test: /\.js$/,
-                exclude: /node_modules/,
+                exclude: /(node_modules)/,
                 enforce: 'pre',
                 use: [{loader: 'eslint-loader', options: {}}]
+            },
+            {
+                test: /\.js$/,
+                exclude: /(node_modules)/,
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            plugins: [
+                                // Автоматически вставляет 'use strict' в начале всех js-файлов, спасая нас от рутины.
+                                ['transform-strict-mode', {strict: true}]
+                            ]
+                        }
+                    }
+                ]
             },
             {
                 test: /\.less$/,
