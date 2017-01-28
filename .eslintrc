@@ -1,16 +1,28 @@
 {
-    "extends": "airbnb-base/legacy",
-    "globals": {
-        "$": false,
-        "jQuery": false,
-        "_": false,
-        "Backbone": false,
-        "app": false
+    'globals': {
+        '$': false,
+        'jQuery': false,
+        '_': false,
+        'Backbone': false,
+        'app': false
     },
-    "rules": {
-        "indent": ["error", 4],
-
+    'rules': {
         // variables
-        "one-var": ["error", "never"]
+        'one-var': ['error', 'never'],
+        'vars-on-top': 'error',
+
+        // types
+        'radix': ['error', 'always'],
+
+        // best practices
+        'semi': ['error', 'always'],
+        'no-unexpected-multiline': 'error',
+        'no-extra-semi': 'error',
+
+        // style
+        'indent': ['error', 4],
+        'no-tabs': 'error',
+        'no-mixed-spaces-and-tabs': 'error',
+        'brace-style': ['error', '1tbs', {'allowSingleLine': true}]
     }
 }
