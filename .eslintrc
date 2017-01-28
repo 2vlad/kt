@@ -1,5 +1,16 @@
 {
     "extends": "airbnb-base/legacy",
+    "globals": {
+        "$": false,
+        "jQuery": false,
+        "_": false,
+        "Backbone": false,
+        "app": false
+    },
     "rules": {
+        "indent": ["error", 4],
+
+        // variables
+        "one-var": ["error", "never"]
     }
 }
