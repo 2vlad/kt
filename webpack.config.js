@@ -44,7 +44,11 @@ module.exports = {
             {
                 test: /\.jinja$/,
                 use: {
-                    loader: 'nunjucks-loader'
+                    loader: 'nunjucks-loader',
+                    options: {
+                        config: __dirname + '/nunjucks.config.js',
+                        jinjaCompat: true
+                    }
                 }
             },
             {
