@@ -1,4 +1,4 @@
-var Backbone = require('backbone/backbone');
+var Backbone = require('backbone');
 
 module.exports = Backbone.View.extend({
     initialize: function() {

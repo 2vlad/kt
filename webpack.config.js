@@ -42,6 +42,12 @@ module.exports = {
                 ]
             },
             {
+                test: /\.jinja$/,
+                use: {
+                    loader: 'nunjucks-loader'
+                }
+            },
+            {
                 test: /\.less$/,
                 loader: ExtractTextPlugin.extract({
                     fallbackLoader: 'style-loader',
@@ -71,6 +77,7 @@ module.exports = {
         }),
         new webpack.LoaderOptionsPlugin({
             options: {
+                context: __dirname,
                 postcss: [
                     autoprefixer({
                         browsers: ['last 2 version']

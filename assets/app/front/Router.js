@@ -1,5 +1,5 @@
-var Backbone = require('backbone/backbone');
-var _ = require('underscore/underscore');
+var Backbone = require('backbone');
+var _ = require('underscore');
 
 var Index = require('front/pages/Index/Index');
 var NotFound = require('front/pages/NotFound/NotFound');

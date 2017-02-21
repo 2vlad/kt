@@ -1,5 +1,5 @@
-var Backbone = require('backbone/backbone');
-var _ = require('underscore/underscore');
+var Backbone = require('backbone');
+var _ = require('underscore');
 var svg4everybody = require('svg4everybody');
 
 var Settings = require('./Settings');
@@ -24,7 +24,6 @@ window.app.els = {
     $htmlBody: $('html,body'),
     $content: $('.Content')
 };
-
 app.router = new Router();
 
 app.router.start();
