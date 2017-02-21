@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 """
 Django settings for starter project.
 
@@ -68,6 +70,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    # Раскомментировать если необходимо подключить отдельно мобильную версию сайта
+    # 'tools.various.middleware.MobileDetectionMiddleware',
 )
 
 ROOT_URLCONF = 'config.urls'

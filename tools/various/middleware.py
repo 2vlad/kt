@@ -31,17 +31,7 @@ class MobileDetectionMiddleware(object):
     def process_view(self, request, view_func, view_args, view_kwargs):
         if request.path.startswith('/api/') \
                 or request.path.startswith('/control/') \
-                or request.path.startswith('/uploads/') \
-                or request.path.startswith('/tilda/'):
-            return
-
-        if request.COOKIES.get('show_main'):
-            return
-
-        if request.method == 'GET' \
-                and request.path == '/' \
-                and 'rss' in request.GET \
-                and request.GET.get('type', '') == 'yandex':
+                or request.path.startswith('/media/'):
             return
 
         if '/mobile' not in request.path and request.is_phone:

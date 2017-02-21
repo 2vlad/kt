@@ -25,6 +25,7 @@ module.exports = Backbone.Router.extend({
         var is404 = app.els.$body.hasClass('Page404');
         var pushStateSupported = history && _.isFunction(history.pushState);
         Backbone.history.start({pushState: pushStateSupported, silent: is404});
+
         if (is404) {
             this.notFound();
         }
