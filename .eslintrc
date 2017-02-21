@@ -18,12 +18,16 @@
         // best practices
         "semi": ["error", "always"],
         "no-unexpected-multiline": "error",
-        "no-extra-semi": "error",
+        // "no-extra-semi": "error",
 
         // style
         "indent": ["error", 4],
         "no-tabs": "error",
         "no-mixed-spaces-and-tabs": "error",
-        "brace-style": ["error", "1tbs", {"allowSingleLine": true}]
+        "brace-style": ["error", "1tbs", {"allowSingleLine": false}],
+        "curly": ["error", "multi-line"],
+        "space-before-blocks": "error",
+        "keyword-spacing": ["error", { "before": true, "after": true }],
+        "space-before-function-paren": ["error", {"anonymous": "always", "named": "never"}]
     }
 }
