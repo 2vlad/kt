@@ -12,13 +12,13 @@ def user_logout(request):
 
 
 def user_login(request, view_func, *args, **kwargs):
-    if request.user.is_authenticated() and request.user.is_staff:
+    if request.user.is_authenticated():
         return view_func(request, *args, **kwargs)
     state = ""
     if request.method == 'POST':
-        email = request.POST.get('login')
+        username = request.POST.get('login')
         password = request.POST.get('pwd')
-        user = authenticate(email=email, password=password)
+        user = authenticate(username=username, password=password)
         if user is None or not user.is_active:
             state = "Your username and/or password were incorrect."
         else:
@@ -27,3 +27,4 @@ def user_login(request, view_func, *args, **kwargs):
             # return view_func(request, *args, **kwargs)
             return HttpResponseRedirect(request.get_full_path())
     return render_to_response('control/login.html', {'state': state}, context_instance=RequestContext(request))
+

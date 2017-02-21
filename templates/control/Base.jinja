@@ -1,6 +1,6 @@
 <!doctype html>
 
-{% import 'control/openrussia/components/TopNav/TopNav.jinja' as TopNav %}
+{#{% import 'control/openrussia/components/TopNav/TopNav.jinja' as TopNav %}#}
 
 <html lang="en">
 <head>
@@ -14,13 +14,13 @@
     <link rel="icon" type="image/png" href="{{ static('favicon/favicon-32x32.png') }}" sizes="32x32"/>
     <link rel="icon" type="image/png" href="{{ static('favicon/favicon-16x16.png') }}" sizes="16x16"/>
     <link rel="shortcut icon" href="{{ static('favicon/favicon.ico') }}" type="image/x-icon"/>
-    <meta name="application-name" content="Открытая Россия"/>
+    <meta name="application-name" content="Starter"/>
     <meta name="msapplication-TileColor" content="#000000"/>
     <meta name="msapplication-TileImage" content="{{ static('favicon/mstile-144x144.png') }}"/>
 
     <meta name="csrf-token" content="{{ csrf_token }}">
 
-    <title>Открытая Россия{% block title %} — {% endblock %}</title>
+    <title>Starter{% block title %} — {% endblock %}</title>
 
     <link rel="icon" href="/static/img/favicon.png" type="image/x-icon"/>
     <link rel="shortcut icon" href="/static/img/favicon.png" type="image/x-icon"/>
@@ -33,11 +33,11 @@
 <body class="{% block body_class %}{% endblock %}">
 <img style="display:none" alt="" src="/static/svg/control/symbol/svg/sprite.symbol.svg">
 
-{% block topnav %}
-    {% call TopNav.TopNav(request=request, userName=userName) %}{% endcall %}
-{% endblock %}
+{#{% block topnav %}#}
+{#    {% call TopNav.TopNav(request=request, userName=userName) %}{% endcall %}#}
+{#{% endblock %}#}
 
-{% include 'control/openrussia/components/SideNav/SideNav.jinja' %}
+{#{% include 'control/openrussia/components/SideNav/SideNav.jinja' %}#}
 
 {% block before_content %}{% endblock %}
 

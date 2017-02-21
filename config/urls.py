@@ -27,7 +27,8 @@ urlpatterns += required(
     login_required_flat,
     patterns('',
              (r'^control/api/', include('tools.files.urls')),
-             (r'^control/', include('tools.various.urls')), )
+             (r'^control/', include('tools.various.urls')),
+             (r'^control/', include('control.urls', app_name='control', namespace='control')), )
 )
 
 handler404 = Custom404View.get
