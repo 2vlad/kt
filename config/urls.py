@@ -15,8 +15,8 @@ Including another URLconf
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls import include, url, patterns
-
 from tools.various.decorators import login_required_flat, required
+from front.views_utils import Custom404View
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -30,8 +30,8 @@ urlpatterns += required(
              (r'^control/', include('tools.various.urls')), )
 )
 
-handler404 = 'front.views.custom_404'
-handler500 = 'front.views.custom_500'
+handler404 = Custom404View.get
+handler500 = 'front.views_utils.custom_500'
 
 if settings.DEBUG:
     urlpatterns += patterns('',

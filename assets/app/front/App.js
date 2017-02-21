@@ -1,13 +1,12 @@
 var Backbone = require('backbone/backbone');
 var _ = require('underscore/underscore');
-
 var svg4everybody = require('svg4everybody');
-
-require('reset.css');
-require('front/style.less');
 
 var Settings = require('./Settings');
 var Router = require('./Router');
+
+require('reset.css');
+require('front/style.less');
 
 svg4everybody();
 
@@ -23,8 +22,7 @@ window.app.els = {
     $window: $(window),
     $body: $('body'),
     $htmlBody: $('html,body'),
-    $content: $('.Content'),
-    $globalNav: $('.GlobalNav')
+    $content: $('.Content')
 };
 
 app.router = new Router();

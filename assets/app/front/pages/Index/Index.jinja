@@ -1,5 +1,18 @@
 {% extends 'front/Base.jinja' %}
+{% import 'front/utils/macros.jinja' as macros %}
 
 {% block content %}
-    Starter
+    <div class="Index">
+        <h1 class="Index-header">Starter</h1>
+
+        <p>Include SVG Symbol</p>
+        <span class="Index-SvgSymbol">
+            {% call macros.svgSprite('arrow-down') %}{% endcall %}
+        </span>
+
+        <p>Include raw SVG</p>
+        <span class="Index-SvgRaw">
+            {% include 'svg/front/arrow-down.svg' %}
+        </span>
+    </div>
 {% endblock %}

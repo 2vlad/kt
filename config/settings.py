@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 """
 Django settings for starter project.
 
@@ -56,6 +58,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'front',
+    'tools.files',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -67,6 +70,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    # Раскомментировать если необходимо подключить отдельно мобильную версию сайта
+    # 'tools.various.middleware.MobileDetectionMiddleware',
 )
 
 ROOT_URLCONF = 'config.urls'
@@ -131,6 +136,16 @@ USE_L10N = True
 
 USE_TZ = True
 
+
+class Lang:
+    En = 'en'
+
+
+LANGUAGES = (
+    (Lang.En, 'English'),
+)
+
+LANGUAGES_TUPLE = (Lang.En, )
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
