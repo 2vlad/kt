@@ -22,7 +22,7 @@ module.exports = {
             // не измененные другими лоадерами как, например, babel-loader-ом.
             {
                 test: /\.js$/,
-                exclude: /(node_modules)/,
+                exclude: ['node_modules', path.join(__dirname, '/assets/custom_libs/')],
                 enforce: 'pre',
                 use: [{loader: 'eslint-loader'}]
             },
