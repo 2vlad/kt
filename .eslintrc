@@ -8,17 +8,16 @@
     },
 
     "rules": {
+        // best practices
+        "semi": ["error", "always"],
+        "no-unexpected-multiline": "error",
+
         // variables
         "one-var": ["error", "never"],
         "vars-on-top": "error",
 
         // types
         "radix": ["error", "always"],
-
-        // best practices
-        "semi": ["error", "always"],
-        "no-unexpected-multiline": "error",
-        // "no-extra-semi": "error",
 
         // style
         "indent": ["error", 4],
@@ -28,6 +27,10 @@
         "curly": ["error", "multi-line"],
         "space-before-blocks": "error",
         "keyword-spacing": ["error", { "before": true, "after": true }],
-        "space-before-function-paren": ["error", {"anonymous": "always", "named": "never"}]
+        "space-before-function-paren": ["error", {"anonymous": "always", "named": "never"}],
+        "space-infix-ops": "error",
+        "space-unary-ops": ["error", {"words": true, "nonwords": false}],
+        "newline-before-return": "error",
+        "newline-per-chained-call": ["error", {"ignoreChainWithDepth": 2}]
     }
 }
