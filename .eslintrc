@@ -11,6 +11,13 @@
         // best practices
         "semi": ["error", "always"],
         "no-unexpected-multiline": "error",
+        "max-params": ["error", 2],
+        "comma-dangle": ["error", "never"],
+        "no-array-constructor": "error",
+        "no-new-object": "error",
+        "no-new-wrappers": "error",
+        "dot-notation": "error",
+
 
         // variables
         "one-var": ["error", "never"],
@@ -23,6 +30,8 @@
         "indent": ["error", 4],
         "no-tabs": "error",
         "no-mixed-spaces-and-tabs": "error",
+        "camelcase": "error",
+        "quotes": ["error", "double", { "avoidEscape": true }],
         "brace-style": ["error", "1tbs", {"allowSingleLine": false}],
         "curly": ["error", "multi-line"],
         "space-before-blocks": "error",
