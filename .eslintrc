@@ -31,7 +31,7 @@
         "no-tabs": "error",
         "no-mixed-spaces-and-tabs": "error",
         "camelcase": "error",
-        "quotes": ["error", "double", { "avoidEscape": true }],
+        "quotes": ["error", "single", { "avoidEscape": true }],
         "brace-style": ["error", "1tbs", {"allowSingleLine": false}],
         "curly": ["error", "multi-line"],
         "space-before-blocks": "error",

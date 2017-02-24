@@ -14,7 +14,7 @@ module.exports = {
 
                 if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
                     csrftoken = Cookies.get('csrftoken');
-                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                    xhr.setRequestHeader('X-CSRFToken', csrftoken);
                 }
             }
         });
