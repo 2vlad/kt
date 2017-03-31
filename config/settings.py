@@ -85,6 +85,7 @@ TEMPLATES = [
                  os.path.join(os.path.abspath(BASE_DIR), 'static')],
         'APP_DIRS': True,
         'OPTIONS': {
+            'auto_reload': True,
             'trim_blocks': True,
             'lstrip_blocks': True,
             'environment': 'config.jinja.environment',

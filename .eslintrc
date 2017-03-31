@@ -21,7 +21,7 @@
 
         // variables
         "one-var": ["error", "never"],
-        "vars-on-top": "error",
+//        "vars-on-top": "error",
 
         // types
         "radix": ["error", "always"],
