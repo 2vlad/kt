@@ -1,6 +1,6 @@
 from settings import *  # noqa
 
-DEBUG = False
+DEBUG = True
 
 TEMPLATE_DEBUG = DEBUG
 
