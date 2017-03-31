@@ -1,10 +1,11 @@
 var Backbone = require('backbone');
 
+var Base = require('front/components/Base/Base');
 var Button = require('front/components/Button/Button');
 
 require('./Index.less');
 
-module.exports = Backbone.View.extend({
+module.exports = Base.extend({
     el: '.Index',
 
     initialize: function () {

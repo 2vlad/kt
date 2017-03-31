@@ -17,6 +17,7 @@ front/migrations/
 tools/files/migrations/
 
 node_modules/
+yarn.lock
 
 *.sublime-workspace
 *.sublime-project

@@ -24,23 +24,29 @@ module.exports = {
                 test: /\.js$/,
                 exclude: ['node_modules', path.join(__dirname, '/assets/custom_libs/')],
                 enforce: 'pre',
-                use: [{loader: 'eslint-loader'}]
-            },
-            {
-                test: /\.js$/,
-                exclude: /(node_modules)/,
                 use: [
                     {
-                        loader: 'babel-loader',
-                        options: {
-                            plugins: [
-                                // Автоматически вставляет 'use strict' в начале всех js-файлов, спасая нас от рутины.
-                                ['transform-strict-mode', {strict: true}]
-                            ]
-                        }
+                        loader: 'eslint-loader',
+                        options: {cache: true}
                     }
                 ]
             },
+            // Пока выключил, так как ломает underscore.js в админке
+            // {
+            //     test: /\.js$/,
+            //     exclude: ['node_modules', path.join(__dirname, '/assets/custom_libs/')],
+            //     use: [
+            //         {
+            //             loader: 'babel-loader',
+            //             options: {
+            //                 plugins: [
+            //                     // Автоматически вставляет 'use strict' в начале всех js-файлов, спасая нас от рутины.
+            //                     ['transform-strict-mode', {strict: true}]
+            //                 ]
+            //             }
+            //         }
+            //     ]
+            // },
             {
                 test: /\.jinja$/,
                 use: {

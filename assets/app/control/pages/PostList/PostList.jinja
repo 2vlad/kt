@@ -1,0 +1,26 @@
+{% extends 'control/Base.jinja' %}
+{% import 'control/utils/macros.jinja' as macros %}
+{% from 'control/components/Button/Button.jinja' import Button %}
+
+{% block title %}{{ super() }} Posts{% endblock %}
+
+{% block content %}
+    <div class="PostList">
+        <div class="PostList-header">
+            <h1 class="Header">Post list</h1>
+        </div>
+
+        <div class="PostList-create">
+            {{ Button(title='Create post',
+                      tag='a',
+                      attrs=['href=' + url('control:post-new')]) }}
+        </div>
+        <div class="PostList-list"></div>
+    </div>
+{% endblock %}
+
+{% block data %}
+    {{ super() }}
+
+    app.data.postList = {{ post_list|jsonify|safe }}
+{% endblock %}

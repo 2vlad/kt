@@ -26,39 +26,41 @@
     <link rel="shortcut icon" href="/static/img/favicon.png" type="image/x-icon"/>
 
     {% block static %}
-        <link type="text/css" href="{{ static(bundle('control','app.css')) }}" rel="stylesheet">
+        <link type="text/css" href="{{ static(bundle('control','main.css')) }}" rel="stylesheet">
     {% endblock %}
 </head>
 
 <body class="{% block body_class %}{% endblock %}">
 <img style="display:none" alt="" src="/static/svg/control/symbol/svg/sprite.symbol.svg">
 
-{#{% block topnav %}#}
-{#    {% call TopNav.TopNav(request=request, userName=userName) %}{% endcall %}#}
-{#{% endblock %}#}
-
-{#{% include 'control/openrussia/components/SideNav/SideNav.jinja' %}#}
-
 {% block before_content %}{% endblock %}
 
 <div class="Content">
-    {% block content %}{% endblock %}
+    {% block topNav %}
+        <div class="Content-topNav">
+            {% include 'control/components/TopNav/TopNav.jinja' %}
+        </div>
+    {% endblock %}
+
+    <div class="Content-body">
+        {% block content %}{% endblock %}
+    </div>
 </div>
 
 {#{% include 'control/common/components/Spinner/Spinner.jinja' %}#}
 
-{% block inside_body %}{% endblock %}
+{% block after_content %}{% endblock %}
 
 <script>
-    {% block data %}
-        window.app = {
-            data: {},
-            settings: {
-                staticUrl: '{{ STATIC_URL }}',
-                urls: {}
-            }
-        };
-    {% endblock %}
+	{% block data %}
+		window.app = {
+			data: {},
+			settings: {
+				staticUrl: '{{ STATIC_URL }}',
+				urls: {}
+			}
+		};
+	{% endblock %}
 </script>
 
 {% block libs %}
@@ -66,7 +68,7 @@
     <script>window.jQuery || document.write('<script src="{{ static('js/libs/jquery.min.js') }}"><\/script>')</script>
 {% endblock %}
 
-<script src="{{ static(bundle('control','app.js')) }}" async></script>
+<script src="{{ static(bundle('control','main.js')) }}" async></script>
 
 {% block libs_after_app %}
 {% endblock %}

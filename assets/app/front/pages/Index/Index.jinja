@@ -3,19 +3,26 @@
 
 {% block content %}
     <div class="Index">
-        <h1 class="Index-header">Starter</h1>
+        <h1 class="Index-header">Заготовка проекта</h1>
 
-        <p>Include SVG Symbol</p>
+        <p>
+            Данный проект состоит из двух частей:
+            <br>
+            фронтенд — здесь показаны routing, стили, создание и уничтожение компонент
+            <br>
+            админка — показано редактирование списка, сущности
+        </p>
+
+        <h2>Как использовать SVG</h2>
+
+        <h3>Вставить SVG спрайт</h3>
         <span class="Index-SvgSymbol">
             {% call macros.svgSprite('arrow-down') %}{% endcall %}
         </span>
 
-        <p>Include raw SVG</p>
+        <h3>Заинклюдить SVG напрямую</h3>
         <span class="Index-SvgRaw">
             {% include 'svg/front/arrow-down.svg' %}
         </span>
-
-        <p>Component render</p>
-        <div class="Index-button"></div>
     </div>
 {% endblock %}

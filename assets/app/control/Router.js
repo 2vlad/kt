@@ -2,6 +2,7 @@ var Backbone = require('backbone');
 var _ = require('underscore');
 
 var Index = require('control/pages/Index/Index');
+var PostList = require('control/pages/PostList/PostList');
 var NotFound = require('control/pages/NotFound/NotFound');
 
 module.exports = Backbone.Router.extend({
@@ -11,6 +12,10 @@ module.exports = Backbone.Router.extend({
 
     index: function () {
         this.activate(Index);
+    },
+
+    postList: function () {
+        this.activate(PostList);
     },
 
     notFound: function () {

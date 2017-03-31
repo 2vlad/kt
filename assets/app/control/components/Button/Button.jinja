@@ -1,0 +1,10 @@
+{# В объект options можно передевать параметры:
+   classes - с списком классов, для добавления
+   attrs - с доп аттрибутами компоненты #}
+
+{% macro Button(title, tag='button', classes=[], attrs=[]) %}
+    <{{ tag }}
+    class="Button {{ classes|join(' ') }}" {% for a in attrs -%}{{ a }} {% endfor %}>
+        {{ title }}
+    </{{ tag }}>
+{% endmacro %}

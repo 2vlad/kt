@@ -5,6 +5,11 @@ var svg4everybody = require('svg4everybody');
 var Settings = require('./Settings');
 var Router = require('./Router');
 
+require('control/components/TopNav/TopNav');
+require('control/components/Content/Content');
+require('control/components/Header/Header');
+require('control/components/Button/Button');
+
 require('reset.css');
 require('control/style.less');
 

@@ -154,3 +154,25 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+FRONT_STATS = None
+CONTROL_STATS = None
+
+try:
+    with open(os.path.join(BASE_DIR, 'webpack.front.stats.json')) as front_stats:
+        FRONT_STATS = json.load(front_stats)
+except IOError:
+    print 'No webpack.front.stats.json file'
+
+try:
+    with open(os.path.join(BASE_DIR, 'webpack.control.stats.json')) as control_stats:
+        CONTROL_STATS = json.load(control_stats)
+except IOError:
+    print 'No webpack.control.stats.json file'
+
+# Information to link builded static files with Django.
+# For Django to know by what name to reference
+WEBPACK_BUNDLES = {
+    'front': FRONT_STATS,
+    'control': CONTROL_STATS,
+}

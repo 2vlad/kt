@@ -46,10 +46,23 @@
 <body class="{% block body_class %}{% endblock %}">
 <img style="display:none" alt="" src="{{ static('svg/front/symbol/svg/sprite.symbol.svg') }}">
 
+{% block before_content %}{% endblock %}
+
 <div class="Content">
-    {% block content %}
+    {% block topNav %}
+        <div class="Content-topNav">
+            {% include 'front/components/TopNav/TopNav.jinja' %}
+        </div>
     {% endblock %}
+
+    <div class="Content-body">
+        {% block content %}{% endblock %}
+    </div>
 </div>
+
+{#{% include 'control/common/components/Spinner/Spinner.jinja' %}#}
+
+{% block after_content %}{% endblock %}
 
 {% block data %}
     <script>
