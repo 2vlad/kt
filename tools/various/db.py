@@ -204,7 +204,7 @@ class Base(Export):
         if model is None:
             return
 
-        cls.save_translations(temp_data, model, model.translations.model)
+        # cls.save_translations(temp_data, model, model.translations.model)
 
         model.save()
 
