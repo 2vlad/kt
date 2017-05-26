@@ -7,6 +7,9 @@ var runSequence = require('run-sequence').use(gulp);
 
 var svgSprite = require('gulp-svg-sprite');
 
+var webpack = require('webpack');
+var UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+var CompressionPlugin = require("compression-webpack-plugin");
 var gulpWebpack = require('./tools/frontend/gulp.webpack.js');
 var webpackConfig = require('./webpack.config.js');
 var BundleTracker = require('webpack-bundle-tracker');
@@ -14,6 +17,14 @@ var BundleTracker = require('webpack-bundle-tracker');
 var webpackConfigs = {
     front: cloneDeep(webpackConfig),
     control: cloneDeep(webpackConfig)
+};
+
+var gzipConfig = {
+    asset: "[path].gz[query]",
+    algorithm: "gzip",
+    test: /\.(js|css|svg|map)$/,
+    threshold: 4096,
+    minRatio: 0.8
 };
 
 gulp.task('setDevVars', function () {
@@ -26,10 +37,18 @@ gulp.task('setDevVars', function () {
 
 gulp.task('setProductionVars', function () {
     _.each(webpackConfigs, function (config) {
-        config.devtool = 'source-map';
+        config.devtool = 'sourcemap';
         config.watch = false;
         config.cache = false;
-        // config.plugins.push(new webpack.optimize.UglifyJsPlugin(uglifyConfig));
+        config.plugins.push(new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': JSON.stringify('production')
+            }
+        }));
+        config.plugins.push(new UglifyJSPlugin({
+            sourceMap: true
+        }));
+        config.plugins.push(new CompressionPlugin(gzipConfig));
     });
 });
 
