@@ -1,7 +1,7 @@
 {
-  "DB_NAME": "starter",
-  "DB_USER": "starter",
-  "DB_PASSWORD": "default_password",
+  "DB_NAME": "kt",
+  "DB_USER": "kt",
+  "DB_PASSWORD": "he11o5laD",
   "DB_HOST": "127.0.0.1",
   "DB_PORT": "3306"
 }
