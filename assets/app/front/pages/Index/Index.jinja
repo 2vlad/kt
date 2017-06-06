@@ -1,28 +1,16 @@
 {% extends 'front/Base.jinja' %}
 {% import 'front/utils/macros.jinja' as macros %}
 
+{% from 'front/components/SetOfCards/SetOfCards.jinja' import SetOfCards %}
+{% from 'front/components/Header/Header.jinja' import Header %}
+{% from 'front/components/Footer/Footer.jinja' import Footer %}
+{% from 'front/components/Nav/Nav.jinja' import Nav %}
+
 {% block content %}
     <div class="Index">
-        <h1 class="Index-header">Заготовка проекта</h1>
-
-        <p>
-            Данный проект состоит из двух частей:
-            <br>
-            фронтенд — здесь показаны routing, стили, создание и уничтожение компонент
-            <br>
-            админка — показано редактирование списка, сущности
-        </p>
-
-        <h2>Как использовать SVG</h2>
-
-        <h3>Вставить SVG спрайт</h3>
-        <span class="Index-SvgSymbol">
-            {% call macros.svgSprite('arrow-down') %}{% endcall %}
-        </span>
-
-        <h3>Заинклюдить SVG напрямую</h3>
-        <span class="Index-SvgRaw">
-            {% include 'svg/front/arrow-down.svg' %}
-        </span>
+        {{ Nav() }}
+        {{ Header() }}
+        {{ SetOfCards() }}
+        {{ Footer() }}
     </div>
 {% endblock %}

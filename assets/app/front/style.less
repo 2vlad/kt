@@ -1,23 +1,31 @@
 *,
 *:after,
 *:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  position: relative;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    //@font-face {
+    //font-family: "fugue";
+    //src: url(fugue.otf);
+    //}
 
-  text-rendering: optimizeLegibility;
-  -webkit-text-size-adjust: 100%;
-  -webkit-font-feature-settings: "kern";
-  -moz-font-feature-settings: "kern=1";
-  -moz-font-feature-settings: "kern";
-  -ms-font-feature-settings: "kern" 1;
-  font-feature-settings: "kern";
+    font-family: 'fugue', 'Helvetica Neue', Arial, sans-serif;
+    text-align: center;
+
+    position: relative;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-feature-settings: "kern";
+    -moz-font-feature-settings: "kern=1";
+    -moz-font-feature-settings: "kern";
+    -ms-font-feature-settings: "kern" 1;
+    font-feature-settings: "kern";
 }

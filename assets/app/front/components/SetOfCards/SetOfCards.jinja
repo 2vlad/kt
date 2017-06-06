@@ -1,0 +1,12 @@
+{% import 'front/utils/macros.jinja' as macros %}
+
+{% from 'front/components/Card/Card.jinja' import Card %}
+
+{% macro SetOfCards() %}
+    <div class="SetOfCards">
+        <input id="search" type="text" placeholder="search..."/>
+        <div class="SetOfCards-cards">
+            {{ Card() }}
+        </div>
+    </div>
+{% endmacro %}

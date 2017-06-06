@@ -1,0 +1,273 @@
+{% import 'front/utils/macros.jinja' as macros %}
+
+{#{% from 'front/components/ProjectItem/ProjectItem.jinja' import ProjectItem %}#}
+
+{% macro Card() %}
+
+    <div class="container card">
+        <div class="flex row structure">
+            <!-- field and description start -->
+            <div class="flex col structure-1">
+                <div class="flex element field">
+                    <div class="content">
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+                <div class="flex element field-description">
+                    <div class="content">
+               <span>это язык программирования, позволяющий сделать web-страницы и приложения интерактивными.
+                 С его помощью можно изменять стили на странице, удалять или добавлять теги и многое другое.
+               </span>
+                    </div>
+                </div>
+            </div>
+            <!-- field and description end -->
+
+            <!-- expert' content start start -->
+            <div class="flex col structure-2">
+
+                <div class="flex element expert structure-2-1">
+                    <div class="content">
+                        <span>Elon Musk CEO of SpaceX</span>
+                    </div>
+                </div>
+                <!-- -->
+                <div class="flex row structure-2-2">
+                    <div class="flex col structure-2-2-2">
+                        <div class="flex col expert-content-read">
+                            <div class="flex row structure-3">
+                                <div class="flex element content-type">
+                                    <div class="content">
+                                        <span>read</span>
+                                    </div>
+                                </div>
+                                <div class="flex element resource">
+                                    <div class="content">
+                                        Язык JavaScript
+                                    </div>
+                                </div>
+                                <div class="flex element author">
+                                    <div class="content">
+                                        Илья Кантор
+                                    </div>
+                                </div>
+                                <div class="flex element length">
+                                    <div class="content">
+                                        1046 стр
+                                    </div>
+                                </div>
+                                <div class="flex element access">
+                                    <div class="content" style="text-align: right;">
+                                        <i class="fa fa-lock" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex row structure-3">
+                                <div class="flex element content-type" style="visibility:hidden;">
+                                    <div class="content">
+                                        <span>read</span>
+                                    </div>
+                                </div>
+                                <div class="flex element resource">
+                                    <div class="content">
+                                        JavaScript. Подробное руководство
+                                    </div>
+                                </div>
+                                <div class="flex element author">
+                                    <div class="content">
+                                        Дэвид Флэнаган
+                                    </div>
+                                </div>
+                                <div class="flex element length">
+                                    <div class="content">
+                                        1080 стр
+                                    </div>
+                                </div>
+                                <div class="flex element access">
+                                    <div class="content" style="text-align: right;">
+                                        <i class="fa fa-lock" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex row structure-3">
+                                <div class="flex element content-type" style="visibility:hidden;">
+                                    <div class="content">
+                                        <span>read</span>
+                                    </div>
+                                </div>
+                                <div class="flex element resource">
+                                    <div class="content">
+                                        jQuery. Подробное руководство по продвинутому JavaScript
+                                    </div>
+                                </div>
+                                <div class="flex element author">
+                                    <div class="content">
+                                        Беэр Бибо, Иегуда Кац
+                                    </div>
+                                </div>
+                                <div class="flex element length">
+                                    <div class="content">
+                                        624 стр
+                                    </div>
+                                </div>
+                                <div class="flex element access">
+                                    <div class="content" style="text-align: right;">
+                                        <i class="fa fa-lock" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- -->
+                        <!-- -->
+                        <div class="flex col expert-content-watch">
+                            <div class="flex row structure-3">
+                                <div class="flex element content-type">
+                                    <div class="content">
+                                        <span>watch</span>
+                                    </div>
+                                </div>
+                                <div class="flex element resource">
+                                    <div class="content">
+                                        Video/course title
+                                    </div>
+                                </div>
+                                <div class="flex element author">
+                                    <div class="content">
+                                        Author of the video/course
+                                    </div>
+                                </div>
+                                <div class="flex element length">
+                                    <div class="content">
+                                        2 часа
+                                    </div>
+                                </div>
+                                <div class="flex element access">
+                                    <div class="content" style="text-align: right;">
+                                        <!-- access -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex row structure-3">
+                                <div class="flex element content-type" style="visibility:hidden;">
+                                    <div class="content">
+                                        <span>watch</span>
+                                    </div>
+                                </div>
+                                <div class="flex element resource">
+                                    <div class="content">
+                                        Video/course title
+                                    </div>
+                                </div>
+                                <div class="flex element author">
+                                    <div class="content">
+                                        Author of the video/course
+                                    </div>
+                                </div>
+                                <div class="flex element length">
+                                    <div class="content">
+                                        2 часа
+                                    </div>
+                                </div>
+                                <div class="flex element access">
+                                    <div class="content" style="text-align: right;">
+                                        <!-- access -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- -->
+                        <!-- -->
+                        <div class="flex col expert-content-listen">
+                            <div class="flex row structure-3">
+                                <div class="flex element content-type">
+                                    <div class="content">
+                                        <span>listen</span>
+                                    </div>
+                                </div>
+                                <div class="flex element resource">
+                                    <div class="content">
+                                        Name of the podcast/lection
+                                    </div>
+                                </div>
+                                <div class="flex element author">
+                                    <div class="content">
+                                        Author of the podcast/lection
+                                    </div>
+                                </div>
+                                <div class="flex element length">
+                                    <div class="content">
+                                        56 мин
+                                    </div>
+                                </div>
+                                <div class="flex element access">
+                                    <div class="content" style="text-align: right;">
+                                        <i class="fa fa-lock" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex col expert-content-practice">
+                            <div class="flex row structure-3">
+                                <div class="flex element content-type">
+                                    <div class="content">
+                                        <span>practice</span>
+                                    </div>
+                                </div>
+                                <div class="flex element resource">
+                                    <div class="content">
+                                        Freecodecamp
+                                    </div>
+                                </div>
+                                <div class="flex element author">
+                                    <div class="content">
+
+                                    </div>
+                                </div>
+                                <div class="flex element length">
+                                    <div class="content">
+                                        3 месяца
+                                    </div>
+                                </div>
+                                <div class="flex element access">
+                                    <div class="content" style="text-align: right;">
+                                        <i class="fa fa-lock" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex col expert-content-discuss">
+                            <div class="flex row structure-3">
+                                <div class="flex element content-type">
+                                    <div class="content">
+                                        <span>discuss</span>
+                                    </div>
+                                </div>
+                                <div class="flex element resource">
+                                    <div class="content">
+                                        StackOverFlow
+                                    </div>
+                                </div>
+                                <div class="flex element author">
+                                    <div class="content">
+
+                                    </div>
+                                </div>
+                                <div class="flex element length">
+                                    <div class="content">
+                                    </div>
+                                </div>
+                                <div class="flex element access">
+                                    <div class="content" style="text-align: right;">
+                                        <i class="fa fa-lock" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- -->
+                    </div>
+                </div>
+            </div>
+            <!-- expert' content start end -->
+        </div>
+    </div>
+{% endmacro %}
