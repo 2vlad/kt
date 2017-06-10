@@ -6,11 +6,19 @@
 {% from 'front/components/Footer/Footer.jinja' import Footer %}
 {% from 'front/components/Nav/Nav.jinja' import Nav %}
 
+{% block body_class %}{% endblock %}
+
+{% block before_content %}
+    {{ Nav() }}
+{% endblock %}
+
 {% block content %}
     <div class="Index">
-        {{ Nav() }}
         {{ Header() }}
-        {{ SetOfCards() }}
-        {{ Footer() }}
+        {{ SetOfCards(data) }}
     </div>
+{% endblock %}
+
+{% block after_content %}
+    {{ Footer() }}
 {% endblock %}

@@ -1,0 +1,62 @@
+@c: .CardResource;
+
+@{c} {
+    display: flex;
+    font-size: 15px;
+    line-height: 20px;
+    padding: 10px 0 10px 0;
+    text-align: left;
+    transform: translateX(-10px);
+
+    &:hover {
+        background-color: #ebebeb;
+        //box-shadow: 1px 1px 2px 1px rgba(140, 140, 140, 0.2);
+    }
+
+    &-link {
+        text-decoration: none;
+        color: #191919;
+    }
+
+    &-resources {
+        display: flex;
+        width: 90%;
+    }
+
+    &-typeOfResource {
+        padding-left: 10px;
+        width: 12%;
+        color: #acacac;
+    }
+
+    &-resourceName,
+    &-resourceAuthor,
+    &-resourceLength,
+    &-isFree {
+        padding: 0 10px 0 10px;
+    }
+
+    &-resourceName {
+        width: 50%;
+    }
+
+    &-resourceAuthor {
+        width: 30%;
+    }
+
+    &-resourceFormat {
+        padding-left: 20px;
+        color: #acacac;
+        width: 15%;
+    }
+
+    &-resourceLength {
+        padding-left: 10px;
+        color: #acacac;
+        width: 15%;
+    }
+
+    &-isFree {
+        width: 10%;
+    }
+}

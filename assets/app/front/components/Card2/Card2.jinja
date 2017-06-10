@@ -1,0 +1,31 @@
+{% import 'front/utils/macros.jinja' as macros %}
+
+{% from 'front/components/CardResource/CardResource.jinja' import CardResource %}
+
+{% macro Card2(data={}) %}
+    <div class="Card2">
+        <div class="Card2-title">
+
+            {# левая колонка карточки #}
+            <div class="Card2-field">
+                <div class="Card2-fieldName">{{ data.field }}</div>
+                <div class="Card2-fieldDescription">{{ data.description }}</div>
+            </div>
+
+            {# правая колонка карточки #}
+            <div class="Card2-expert">
+                <div class="Card2-expertTitle">
+                    <div class="Card2-expertName">{{ data.experts.name }}</div>
+                    <div class="Card2-expertPosition">&nbsp;{{ data.experts.position }}</div>
+                </div>
+                {# все ресурсы #}
+                <div class="Card2-resourcesContainer">
+                    {# тип ресурсов #}
+                    {% for r in data.experts.resources %}
+                        {{ CardResource(r) }}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}

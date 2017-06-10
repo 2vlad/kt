@@ -1,0 +1,1 @@
+require('./CardResource.less');

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru" style="height: 100%;">
 <head>
     <meta charset="UTF-8">
 
@@ -43,21 +43,13 @@
         <link href="{{ static(bundle('front', 'main.css')) }}" rel="stylesheet">
     {% endblock %}
 </head>
-<body class="{% block body_class %}{% endblock %}">
+<body style="position: relative; margin: 0; padding-bottom: 6rem; min-height: 100%;" class="{% block body_class %}{% endblock %}">
 <img style="display:none" alt="" src="{{ static('svg/front/symbol/svg/sprite.symbol.svg') }}">
 
 {% block before_content %}{% endblock %}
 
 <div class="Content">
-    {% block topNav %}
-{#        <div class="Content-topNav">#}
-{#            {% include 'front/components/TopNav/TopNav.jinja' %}#}
-{#        </div>#}
-    {% endblock %}
-
-    <div class="Content-body">
-        {% block content %}{% endblock %}
-    </div>
+    {% block content %}{% endblock %}
 </div>
 
 {#{% include 'control/common/components/Spinner/Spinner.jinja' %}#}
@@ -67,8 +59,7 @@
 {% block data %}
     <script>
         window.app = {
-            data: {
-            }, settings: {
+            data: {}, settings: {
                 staticUrl: '{{ STATIC_URL }}',
                 urls: {}
             }
@@ -84,7 +75,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="{{ static ('custom_libs/jquery.min.js') }}"><\/script>')</script>
 
-{#    <script src="{{ static(bundle('front', 'libs.js')) }}"></script>#}
+    {#    <script src="{{ static(bundle('front', 'libs.js')) }}"></script>#}
 {% endblock %}
 
 <script src="{{ static(bundle('front', 'main.js')) }}" async></script>

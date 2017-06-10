@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.views.generic import TemplateView
-
+import data
 
 # Базовая вьюха, от которой наследуются остальные
 class BaseView(TemplateView):
@@ -16,4 +16,10 @@ class IndexView(BaseView):
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
+        context.update(data.index)
+
+        context.update({
+            'data': data.index,
+        })
+
         return context
