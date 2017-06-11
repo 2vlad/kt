@@ -53,7 +53,7 @@ module.exports = {
                     loader: 'nunjucks-loader',
                     options: {
                         config: __dirname + '/nunjucks.config.js',
-                        jinjaCompat: true
+                        jinjaCompat: false
                     }
                 }
             },

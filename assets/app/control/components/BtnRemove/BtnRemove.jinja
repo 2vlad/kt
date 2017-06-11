@@ -1,0 +1,7 @@
+{%- import 'control/utils/macros.jinja' as macros -%}
+
+{% macro BtnRemove() -%}
+    <button class="BtnRemove u-Btn u-Remove">
+        {% call macros.svgSprite('remove') %}{% endcall %}
+    </button>
+{%- endmacro %}

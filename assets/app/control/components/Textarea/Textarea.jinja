@@ -1,0 +1,11 @@
+{% import 'control/utils/macros.jinja' as macros %}
+
+{% macro Textarea(label, name, value, id, modifiers) %}
+    <div class="Textarea {% for m in modifiers %}Textarea--{{ m }} {% endfor %}">
+        <label class="Textarea-label" for="{% if id %}{{ id }}{% else %}{{ name }}{% endif %}">{{ label }}</label>
+
+        <div id="{% if id %}{{ id }}{% else %}{{ name }}{% endif %}-toolbar" class="Textarea-toolbar"></div>
+        <div data-name="{{ name }}" id="{% if id %}{{ id }}{% else %}{{ name }}{% endif %}" contenteditable="true"
+             class="Textarea-text">{{ value|safe }}</div>
+    </div>
+{% endmacro %}

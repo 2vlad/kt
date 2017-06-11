@@ -2,7 +2,7 @@
 from django.http import Http404
 from django.views.generic import TemplateView
 
-from front.models import Post
+from front.models import About
 
 
 # Базовая вьюха, от которой наследуются остальные
@@ -21,32 +21,14 @@ class IndexView(BaseView):
         return context
 
 
-class PostListView(BaseView):
-    template_name = 'control/pages/PostList/PostList.jinja'
+class AboutView(BaseView):
+    template_name = 'control/pages/AboutPage/AboutPage.jinja'
 
     def get_context_data(self, **kwargs):
-        context = super(PostListView, self).get_context_data(**kwargs)
+        context = super(AboutView, self).get_context_data(**kwargs)
 
-        context['post_list'] = Post.export_control_all()
-
-        return context
-
-
-class PostView(BaseView):
-    template_name = 'control/pages/Post/Post.jinja'
-
-    def get_context_data(self, **kwargs):
-        context = super(PostView, self).get_context_data(**kwargs)
-
-        obj_id = kwargs.get('obj_id')
-        if obj_id:
-            try:
-                obj = Post.objects.get(id=obj_id).export_control()
-            except Post.DoesNotExist:
-                raise Http404
-        else:
-            obj = None
-
-        context['post'] = obj
+        context.update({
+            'about': About.get_or_create().export_control()
+        })
 
         return context

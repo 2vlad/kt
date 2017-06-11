@@ -9,9 +9,9 @@
         <a class="TopNav-a {{ active(request, '^/control/$') }}" href="{{ url ('control:control-main') }}">
             Index
         </a>
-        <a class="TopNav-a {{ active(request, '^/control/posts/') }} " href="{{ url ('control:post-list') }}">
-            Posts
-        </a>
+{#        <a class="TopNav-a {{ active(request, '^/control/posts/') }} " href="{{ url ('control:post-list') }}">#}
+{#            Posts#}
+{#        </a>#}
     </div>
 
     <a class="TopNav-logout" href="{{ url ('control-logout') }}">

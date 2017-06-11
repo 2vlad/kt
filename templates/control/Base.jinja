@@ -35,32 +35,28 @@
 
 {% block before_content %}{% endblock %}
 
-<div class="Content">
-    {% block topNav %}
-        <!-- <div class="Content-topNav">
+{% block topNav %}
+    <!-- <div class="Content-topNav">
             {% include 'control/components/TopNav/TopNav.jinja' %}
         </div> -->
-    {% endblock %}
+{% endblock %}
 
-    <div class="Content-body">
-        {% block content %}{% endblock %}
-    </div>
-</div>
+{% block content %}{% endblock %}
 
 {#{% include 'control/common/components/Spinner/Spinner.jinja' %}#}
 
 {% block after_content %}{% endblock %}
 
 <script>
-	{% block data %}
-		window.app = {
-			data: {},
-			settings: {
-				staticUrl: '{{ STATIC_URL }}',
-				urls: {}
-			}
-		};
-	{% endblock %}
+    {% block data %}
+        window.app = {
+            data: {},
+            settings: {
+                staticUrl: '{{ STATIC_URL }}',
+                urls: {}
+            }
+        };
+    {% endblock %}
 </script>
 
 {% block libs %}

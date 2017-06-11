@@ -1,5 +1,11 @@
-{% macro Input() %}
-    <div class="Input">
-        <input type="text" class="Input-input" value="">
+{% import 'control/utils/macros.jinja' as macros %}
+
+{% macro Input(label, name, value, options={}) -%}
+    <div style="width: 425px" class="Input mdl-textfield mdl-js-textfield mdl-textfield--floating-label {% if value %}is-dirty{% endif %}
+    {% for m in options.modifiers %}Input--{{ m }}{% endfor %}">
+        <input class="Input-input mdl-textfield__input" type="text" id="{{ name }}" name="{{ name }}"
+               value="{{ value }}"/>
+        <label style="font-size: 14px;" class="mdl-textfield__label" for="{{ name }}">{{ label }}</label>
+{#        {{ caller() }}#}
     </div>
 {% endmacro %}

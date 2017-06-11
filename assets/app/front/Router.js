@@ -2,7 +2,7 @@ var Backbone = require('backbone');
 var _ = require('underscore');
 
 var Index = require('front/pages/Index/Index');
-var PostList = require('front/pages/PostList/PostList');
+var About = require('front/pages/About/About');
 var NotFound = require('front/pages/NotFound/NotFound');
 
 module.exports = Backbone.Router.extend({
@@ -14,8 +14,8 @@ module.exports = Backbone.Router.extend({
         this.activate(Index);
     },
 
-    postList: function () {
-        this.activate(PostList);
+    about: function () {
+        this.activate(About);
     },
 
     notFound: function () {
@@ -30,7 +30,7 @@ module.exports = Backbone.Router.extend({
             params.server = true;
 
             app.state.view = new view(params);
-            app.state.view.activate();
+            // app.state.view.activate();
 
             return;
         }

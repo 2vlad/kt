@@ -1,9 +1,45 @@
 @c: .Nav;
 
+@{c} {
+    padding-left: 30px;
+    height: 70px;
+    background-color: #303030;
+
+    &-title {
+        position: relative;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        width: 200px;
+        left: 10px;
+        font-size: 35px;
+        color: white;
+    }
+
+    &-titleLink {
+        text-decoration: none;
+    }
+
+    &-subtitle {
+        position: absolute;
+        width: 210px;
+        font-size: 14px;
+        left: 240px;
+        top: 13px;
+        color: white;
+        text-align: left;
+    }
+
+    &-onAboutPage {
+        display: none;
+    }
+}
+
 nav {
     position: absolute;
     display: flex;
-    right: 60px;
+    top: 0;
+    padding-top: 20px;
+    right: 70px;
     color: white;
 }
 
@@ -15,7 +51,7 @@ nav ul {
 }
 
 nav ul li {
-    margin: 20px;
+    //margin: 22px 0px 22px 0;
 }
 
 nav ul a {

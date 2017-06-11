@@ -1,0 +1,42 @@
+{% extends 'control/Base.jinja' %}
+{% import 'control/utils/macros.jinja' as macros %}
+
+{% from 'control/components/Button/Button.jinja' import Button %}
+{#{% from 'control/components/About/About.jinja' import About %}#}
+
+{% block body_class %}{% endblock %}
+
+{% block before_content %}
+{% endblock %}
+
+{% block content %}
+    <div class='AboutPage'>
+        <div class='AboutPage-header'>About</div>
+
+        {# main form for AboutPage #}
+        <div class='AboutPage-form'></div>
+
+
+        <div class='AboutPage-submit'>
+            {{ Button(title='Save', tag='button', classes=['u-Save'], attrs=[]) }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block data %}
+    {{ super() }}
+
+    app.data.about = {{ about|jsonify|safe }};
+{% endblock %}
+
+{% block libs %}
+    {{ super() }}
+
+    <script>
+        $(document).ready(function () {
+            window.CKEDITOR.disableAutoInline = true;
+        });
+    </script>
+    <script src="{{ static ('custom_libs/ckeditor/ckeditor.js') }}" type="text/javascript"></script>
+    <script src="{{ static ('custom_libs/ckeditor/adapters/jquery.js') }}" type="text/javascript"></script>
+{% endblock %}

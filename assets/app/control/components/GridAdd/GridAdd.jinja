@@ -1,0 +1,9 @@
+{% macro GridAdd(addButton=true, listAdd=true, modifiers=[], classes=[]) -%}
+    <li class="GridAdd u-NoRemove u-Add {% if addButton %}u-addButton{% endif %} {% if listAdd %}u-ListAdd{% endif %}
+    {% for m in modifiers %}GridAdd--{{ m }} {% endfor %} {{ classes|join(' ') }} mdl-card mdl-shadow--2dp">
+
+        <div class="GridAdd-content">
+            {{ caller() }}
+        </div>
+    </li>
+{% endmacro %}

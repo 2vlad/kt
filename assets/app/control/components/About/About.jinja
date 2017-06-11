@@ -1,0 +1,13 @@
+{% import 'control/utils/macros.jinja' as macros %}
+
+{% from 'control/components/Input/Input.jinja' import Input %}
+{% from 'control/components/Textarea/Textarea.jinja' import Textarea %}
+
+<div class="About">
+    <div class='About-row'>
+        {{ Input(label='Title', name='title', value=model.title) }}
+    </div>
+    <div class='Form-row'>
+        {{ Textarea(label='Text', name='text', value=model.text, id='text', modifiers=['noToolbar']) }}
+    </div>
+</div>

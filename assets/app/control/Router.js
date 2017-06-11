@@ -2,20 +2,21 @@ var Backbone = require('backbone');
 var _ = require('underscore');
 
 var Index = require('control/pages/Index/Index');
-var PostList = require('control/pages/PostList/PostList');
+var AboutPage = require('control/pages/AboutPage/AboutPage');
 var NotFound = require('control/pages/NotFound/NotFound');
 
 module.exports = Backbone.Router.extend({
     routes: {
-        '': 'index'
+        'control/': 'index',
+        'control/about/': 'aboutPage'
     },
 
     index: function () {
         this.activate(Index);
     },
 
-    postList: function () {
-        this.activate(PostList);
+    aboutPage: function () {
+        this.activate(AboutPage);
     },
 
     notFound: function () {
@@ -24,6 +25,7 @@ module.exports = Backbone.Router.extend({
 
     activate: function (view, params) {
         this.view = new view(params);
+        this.view.render();
     },
 
     start: function () {

@@ -3,6 +3,8 @@
 from django.views.generic import TemplateView
 import data
 
+from front.models import About
+
 # Базовая вьюха, от которой наследуются остальные
 class BaseView(TemplateView):
     def get_context_data(self, **kwargs):
@@ -20,6 +22,19 @@ class IndexView(BaseView):
 
         context.update({
             'data': data.index,
+        })
+
+        return context
+
+
+class AboutView(BaseView):
+    template_name = 'front/pages/About/About.jinja'
+
+    def get_context_data(self, **kwargs):
+        context = super(AboutView, self).get_context_data(**kwargs)
+
+        context.update({
+            'about': About.get_or_create().export_front()
         })
 
         return context

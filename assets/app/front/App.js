@@ -8,12 +8,9 @@ var Router = require('./Router');
 require('reset.css');
 require('front/style.less');
 
-require('front/components/TopNav/TopNav');
 require('front/components/Footer/Footer');
 require('front/components/Content/Content');
-require('front/components/Header/Header');
 require('front/components/Nav/Nav');
-require('front/components/Card/Card');
 require('front/components/Card2/Card2');
 require('front/components/SetOfCards/SetOfCards');
 require('front/components/CardResource/CardResource');

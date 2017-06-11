@@ -1,1 +1,0 @@
-require('./Header.less');

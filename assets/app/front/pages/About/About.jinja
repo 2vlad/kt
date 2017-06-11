@@ -1,0 +1,24 @@
+{% extends 'front/Base.jinja' %}
+{% import 'front/utils/macros.jinja' as macros %}
+
+{% from 'front/components/Nav/Nav.jinja' import Nav %}
+{% from 'front/components/Footer/Footer.jinja' import Footer %}
+
+{% block title %} — О проекте{% endblock %}
+
+{% block body_class %}{% endblock %}
+
+{% block before_content %}
+    {{ Nav(mods='Nav-onAboutPage') }}
+{% endblock %}
+
+{% block content %}
+    <div class="About">
+        <div class="About-title">{{ about.title }}</div>
+        <div class="About-text">{{ about.text|safe }}</div>
+    </div>
+{% endblock %}
+
+{% block after_content %}
+    {{ Footer() }}
+{% endblock %}
