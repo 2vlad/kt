@@ -1,0 +1,12 @@
+{% import 'control/utils/macros.jinja' as macros %}
+{% import 'control/components/BtnRemove/BtnRemove.jinja' as BtnRemove %}
+
+<div class="FieldItem">
+    <a class="FieldItem-link" href="#">
+{#      <div class="ProjectItem-img" style="background-image: url({{ model.outer.url|safe }});"></div>#}
+        <div class="FieldItem-title">{{ model.title|safe }}</div>
+    </a>
+    <div class="FieldItem-remove">
+        {% call BtnRemove.BtnRemove() %}{% endcall %}
+    </div>
+</div>

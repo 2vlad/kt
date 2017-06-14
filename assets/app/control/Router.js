@@ -1,19 +1,25 @@
 var Backbone = require('backbone');
 var _ = require('underscore');
 
-var Index = require('control/pages/Index/Index');
+// var Index = require('control/pages/Index/Index');
 var AboutPage = require('control/pages/AboutPage/AboutPage');
 var NotFound = require('control/pages/NotFound/NotFound');
+var FieldListPage = require('control/pages/FieldListPage/FieldListPage');
+
 
 module.exports = Backbone.Router.extend({
     routes: {
-        'control/': 'index',
+        'control/': 'fieldListPage',
         'control/about/': 'aboutPage'
     },
 
-    index: function () {
-        this.activate(Index);
+    fieldListPage: function () {
+        this.activate(FieldListPage);
     },
+
+    // index: function () {
+    //     this.activate(Index);
+    // },
 
     aboutPage: function () {
         this.activate(AboutPage);

@@ -74,6 +74,7 @@ module.exports = Backbone.View.extend({
     },
 
     change: function (e) {
+        console.log('change');
         var $input = $(e.target);
         if ($input.attr('type') == 'checkbox') {
             this.model.set($input.attr('name'), $input[0].checked);

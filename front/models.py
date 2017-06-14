@@ -148,6 +148,47 @@ class Base(Export):
         abstract = True
 
 
+class Field(Base):
+    title = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Fields'))
+
+    # @classmethod
+    # def get_or_create(cls, **kwargs):
+    #     try:
+    #         obj = cls.objects.get(**kwargs)
+    #     except Field.DoesNotExist:
+    #         obj = cls.objects.create(**kwargs)
+    #     return obj
+
+    @classmethod
+    def get_or_create(cls):
+        try:
+            obj = cls.objects.all()[0]
+        except IndexError:
+            obj = cls.objects.create()
+
+        return obj
+
+    def export_control(self):
+        data = {}
+
+        data.update({
+            'id': self.id,
+            'title': self.title,
+        })
+
+        return data
+
+    def export_front(self):
+        data = {}
+
+        data.update({
+            'id': self.id,
+            'title': self.title,
+        })
+
+        return data
+
+
 class About(Base):
     title = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Title About'))
     text = models.CharField(max_length=1000, blank=True, default='', verbose_name=_(u'Bottom text'))

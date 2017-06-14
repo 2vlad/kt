@@ -1,17 +1,15 @@
 {% import 'control/utils/macros.jinja' as macros %}
 
 <nav class="TopNav">
-    <a class="TopNav-logo" href="{{ url ('control:control-main') }}">
-        {% call macros.svgSprite('logo') %}{% endcall %}
-    </a>
+    <a class="TopNav-title" href="{{ url ('control:control-main') }}">картотека</a>
 
     <div class="TopNav-list">
         <a class="TopNav-a {{ active(request, '^/control/$') }}" href="{{ url ('control:control-main') }}">
-            Index
+            Fields
         </a>
-{#        <a class="TopNav-a {{ active(request, '^/control/posts/') }} " href="{{ url ('control:post-list') }}">#}
-{#            Posts#}
-{#        </a>#}
+        <a class="TopNav-a {{ active(request, '^/control/about/') }} " href="{{ url ('control:about') }}">
+            About
+        </a>
     </div>
 
     <a class="TopNav-logout" href="{{ url ('control-logout') }}">

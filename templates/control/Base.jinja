@@ -36,9 +36,7 @@
 {% block before_content %}{% endblock %}
 
 {% block topNav %}
-    <!-- <div class="Content-topNav">
-            {% include 'control/components/TopNav/TopNav.jinja' %}
-        </div> -->
+    {% include 'control/components/TopNav/TopNav.jinja' %}
 {% endblock %}
 
 {% block content %}{% endblock %}
@@ -61,6 +59,7 @@
 
 {% block libs %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
     <script>window.jQuery || document.write('<script src="{{ static('js/libs/jquery.min.js') }}"><\/script>')</script>
 {% endblock %}
 

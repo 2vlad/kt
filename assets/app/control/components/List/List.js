@@ -4,6 +4,7 @@ var Backbone = require('backbone');
 var defaultOptions;
 
 require('jquery-ui/ui/widgets/sortable');
+// require('jquery-ui/sortable');
 
 /*
  * Абстрактный список
@@ -30,7 +31,7 @@ module.exports = Backbone.View.extend({
     },
 
     initialize: function (options) {
-        this.options = _.extend({}, defaultOptions, options);
+        this.options = _.extend(defaultOptions, options);
 
         this.autosave = (this.options.autosave !== undefined) ? this.options.autosave : this.autosave;
         this.maxItems = (this.options.maxItems !== undefined) ? this.options.maxItems : null;

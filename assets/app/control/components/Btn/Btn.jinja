@@ -1,0 +1,15 @@
+{# В объект options можно передевать параметры:
+   modifiers - с списком модификаторов компоненты
+   classes - с списком классов, для добавления
+   attributes - с доп аттрибутами компоненты
+   primary - с булевым значением, для добавления класса mdl-button--colored компоненте #}
+
+{% macro Btn(title, tag='button', modifiers=[], classes=[], attributes=[], primary=False) -%}
+    <{{ tag }} class="Btn mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect
+    {{ classes|join(' ') }}
+    {% if primary -%}mdl-button{% endif %}"
+            {% for a in attributes -%}{{ a }} {% endfor %}>
+        <span class="Btn-title">{{ title }}</span>
+        {{ caller() }}
+    </{{ tag }}>
+{% endmacro %}

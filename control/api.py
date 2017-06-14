@@ -6,8 +6,9 @@ from abc import ABCMeta, abstractproperty
 import requests
 from django.http import HttpResponse, Http404
 from django.views.generic import View
-from front.models import About
+from front.models import About, Field
 from tools.various.db import date_handler
+
 
 # from tools.various.api import EditAccessMixin
 
@@ -46,5 +47,14 @@ class BaseAjaxView(View):
             obj = self.model.import_item(data)
             return HttpResponse(json.dumps(obj.export_control(), default=date_handler), content_type="application/json")
 
+
 class AboutAjaxView(BaseAjaxView):
     model = About
+
+
+class FieldListAjaxView(BaseAjaxView):
+    model = Field
+
+
+# class FieldAjaxView(BaseAjaxView):
+#     model = Field

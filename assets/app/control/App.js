@@ -10,12 +10,15 @@ require('material-design-lite/material.min.js');
 
 require('control/components/GridAdd/GridAdd.js');
 require('control/components/BtnRemove/BtnRemove.js');
+require('control/components/Btn/Btn');
 
+require('control/components/TopNav/TopNav');
 require('control/components/Header/Header');
 require('control/components/Button/Button');
 // require('control/components/About/About');
 require('control/components/Textarea/Textarea');
 require('control/components/Input/Input');
+require('control/components/Field/Field');
 
 require('reset.css');
 require('control/style.less');
