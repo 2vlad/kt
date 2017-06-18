@@ -148,16 +148,8 @@ class Base(Export):
         abstract = True
 
 
-class Field(Base):
-    title = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Fields'))
-
-    # @classmethod
-    # def get_or_create(cls, **kwargs):
-    #     try:
-    #         obj = cls.objects.get(**kwargs)
-    #     except Field.DoesNotExist:
-    #         obj = cls.objects.create(**kwargs)
-    #     return obj
+class Card(Base):
+    title = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Card'))
 
     @classmethod
     def get_or_create(cls):
@@ -174,6 +166,7 @@ class Field(Base):
         data.update({
             'id': self.id,
             'title': self.title,
+            # 'url': self.get_control_url()
         })
 
         return data
@@ -184,9 +177,13 @@ class Field(Base):
         data.update({
             'id': self.id,
             'title': self.title,
+            # 'url': self.get_control_url()
         })
 
         return data
+
+    # def get_control_url(self):
+        # return reverse('control:experts', kwargs={'obj_id': self.id})
 
 
 class About(Base):

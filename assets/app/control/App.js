@@ -15,10 +15,9 @@ require('control/components/Btn/Btn');
 require('control/components/TopNav/TopNav');
 require('control/components/Header/Header');
 require('control/components/Button/Button');
-// require('control/components/About/About');
 require('control/components/Textarea/Textarea');
 require('control/components/Input/Input');
-require('control/components/Field/Field');
+require('control/components/Card/Card');
 
 require('reset.css');
 require('control/style.less');

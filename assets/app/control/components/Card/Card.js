@@ -1,10 +1,12 @@
 var AbstractForm = require('control/components/AbstractForm/AbstractForm');
 
-var template = require('./Field.jinja');
-require('./Field.less');
+var template = require('./Card.jinja');
+require('./Card.less');
 
 
 module.exports = AbstractForm.extend({
+    el: '.Card',
+
     template: template,
 
     initialize: function (options) {

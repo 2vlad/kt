@@ -1,25 +1,25 @@
 var Backbone = require('backbone');
 var _ = require('underscore');
 
-// var Index = require('control/pages/Index/Index');
 var AboutPage = require('control/pages/AboutPage/AboutPage');
 var NotFound = require('control/pages/NotFound/NotFound');
-var FieldListPage = require('control/pages/FieldListPage/FieldListPage');
-
+var CardPage = require('control/pages/CardPage/CardPage');
+var CardListPage = require('control/pages/CardListPage/CardListPage');
 
 module.exports = Backbone.Router.extend({
     routes: {
-        'control/': 'fieldListPage',
+        'control/': 'cardListPage',
+        'control/cards/(:id/)': 'cardPage',
         'control/about/': 'aboutPage'
     },
 
-    fieldListPage: function () {
-        this.activate(FieldListPage);
+    cardListPage: function () {
+        this.activate(CardListPage);
     },
 
-    // index: function () {
-    //     this.activate(Index);
-    // },
+    cardPage: function () {
+        this.activate(CardPage);
+    },
 
     aboutPage: function () {
         this.activate(AboutPage);

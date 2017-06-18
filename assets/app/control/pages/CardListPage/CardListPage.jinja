@@ -1,0 +1,29 @@
+{% extends 'control/Base.jinja' %}
+{% import 'control/utils/macros.jinja' as macros %}
+
+{% from 'control/components/Button/Button.jinja' import Button %}
+{% import 'control/components/Btn/Btn.jinja' as Btn %}
+{% from 'control/components/Input/Input.jinja' import Input %}
+
+{% block title %}{{ super() }} Cards{% endblock %}
+
+{% block content %}
+    <div class="CardListPage">
+        <h1 class="CardListPage-title">Cards</h1>
+        <div class="CardListPage-addNew"></div>
+{#        <div class='CardItemList'></div>#}
+        <section class="CardItemList">
+            <ul class="CardItemList-list u-List">
+            </ul>
+        </section>
+        <div class='CardListPage-save'>
+            {#                {{ Button(title='Add', tag='button', classes=['u-Save'], attrs=[]) }}#}
+            {% call Btn.Btn('Add', tag='a', primary=True, attributes=['href=' + url('control:card-new')]) %}{% endcall %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block data %}
+    {{ super() }}
+    app.data.cardList = {{ cardList|jsonify|safe }};
+{% endblock %}

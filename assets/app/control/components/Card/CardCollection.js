@@ -1,9 +1,9 @@
 var CustomCollection = require('control/utils/CustomCollection');
-var FieldModel = require('./FieldModel');
+var CardModel = require('./CardModel');
 
 
 module.exports = CustomCollection.extend({
-    url: '/control/api/fields/',
+    url: '/control/api/cards/',
 
-    model: FieldModel
+    model: CardModel
 });

@@ -6,7 +6,7 @@ from abc import ABCMeta, abstractproperty
 import requests
 from django.http import HttpResponse, Http404
 from django.views.generic import View
-from front.models import About, Field
+from front.models import About, Card
 from tools.various.db import date_handler
 
 
@@ -52,9 +52,5 @@ class AboutAjaxView(BaseAjaxView):
     model = About
 
 
-class FieldListAjaxView(BaseAjaxView):
-    model = Field
-
-
-# class FieldAjaxView(BaseAjaxView):
-#     model = Field
+class CardAjaxView(BaseAjaxView):
+    model = Card

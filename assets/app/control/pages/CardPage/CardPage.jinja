@@ -1,0 +1,39 @@
+{% extends 'control/Base.jinja' %}
+{% import 'control/utils/macros.jinja' as macros %}
+
+{% from 'control/components/Button/Button.jinja' import Button %}
+{#{% from 'control/components/Card/Card.jinja' import Card %}#}
+
+{% block title %}{{ super() }}: Услуга{% endblock %}
+
+{% block content %}
+    <div class='CardPage'>
+        <div class='CardPage-header'>
+            <h1 class='Header'>Card</h1>
+        </div>
+        <div class='Card-form'>
+{#            {{ Card(card) }}#}
+        </div>
+        <div class='CardPage-submit'>
+            {{ Button(title='Save', tag='button', classes=['u-Save'], attrs=[]) }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block data %}
+    {{ super() }}
+
+    app.data.card = {{ card|jsonify|safe }};
+{% endblock %}
+
+{% block libs %}
+    {{ super() }}
+
+    <script>
+        $(document).ready(function() {
+            window.CKEDITOR.disableAutoInline = true;
+        });
+    </script>
+    <script src="{{ static ('custom_libs/ckeditor/ckeditor.js') }}" type="text/javascript"></script>
+    <script src="{{ static ('custom_libs/ckeditor/adapters/jquery.js') }}" type="text/javascript"></script>
+{% endblock %}

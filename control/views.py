@@ -2,7 +2,7 @@
 from django.http import Http404
 from django.views.generic import TemplateView
 
-from front.models import About, Field
+from front.models import About, Card
 
 
 # Базовая вьюха, от которой наследуются остальные
@@ -26,24 +26,38 @@ class AboutView(BaseView):
         return context
 
 
-class FieldListView(BaseView):
-    template_name = 'control/pages/FieldListPage/FieldListPage.jinja'
+class CardView(BaseView):
+    template_name = 'control/pages/CardPage/CardPage.jinja'
 
     def get_context_data(self, **kwargs):
-        context = super(FieldListView, self).get_context_data(**kwargs)
         obj_id = kwargs.get('obj_id')
 
         if obj_id:
             try:
-                obj = Field.objects.get(id=obj_id).export_control()
-            except Field.DoesNotExist:
+                obj = Card.objects.get(id=obj_id).export_control()
+            except Card.DoesNotExist:
                 raise Http404
         else:
             obj = None
 
+        context = super(CardView, self).get_context_data(**kwargs)
+
         context.update({
-            'field': obj,
-            'fieldList': Field.get_or_create().export_control_all()
+            'card': obj
         })
 
         return context
+
+
+class CardListView(BaseView):
+    template_name = 'control/pages/CardListPage/CardListPage.jinja'
+
+    def get_context_data(self, **kwargs):
+        context = super(CardListView, self).get_context_data(**kwargs)
+
+        context.update({
+            'cardList': Card.export_control_all(),
+        })
+
+        return context
+

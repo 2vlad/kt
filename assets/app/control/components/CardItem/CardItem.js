@@ -1,7 +1,7 @@
 var AbstractItem = require('control/components/AbstractItem/AbstractItem');
 
-var template = require('./FieldItem.jinja');
-require('./FieldItem.less');
+var template = require('./CardItem.jinja');
+require('./CardItem.less');
 
 
 module.exports = AbstractItem.extend({
@@ -12,7 +12,7 @@ module.exports = AbstractItem.extend({
     },
 
     removeItem: function (e) {
-        if (confirm('Delete field?')) {
+        if (confirm('Delete card?')) {
             AbstractItem.prototype.removeItem.call(this, e);
         }
     }
