@@ -14,7 +14,6 @@ module.exports = Backbone.View.extend({
     },
 
     initialize: function () {
-        console.log('card page init');
         this.model = new CardModel(app.data.card);
 
         this.$save = this.$('.u-Save');

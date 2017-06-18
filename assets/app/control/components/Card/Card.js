@@ -27,6 +27,7 @@ module.exports = AbstractForm.extend({
     },
 
     render: function () {
+        this.innerModel = this.model;
         this.$el.html(this.template.render({
             model: this.model.toJSON()
         }));

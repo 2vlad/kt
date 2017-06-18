@@ -156,6 +156,21 @@ class Card(Base):
     position = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Position'))
 
     @classmethod
+    def import_item(cls, data, parent=None):
+        source_data = data.pop('program')
+
+        model, temp_data = cls.simple_import(data)
+
+        if model is None:
+            return
+
+        Source.import_all(source_data, model)
+
+        model.save()
+
+        return model
+
+    @classmethod
     def get_or_create(cls):
         try:
             obj = cls.objects.all()[0]
@@ -163,6 +178,19 @@ class Card(Base):
             obj = cls.objects.create()
 
         return obj
+
+    @classmethod
+    def export_control_all(cls, *args, **kwargs):
+        params = {}
+
+        export_type = kwargs.pop('export_type', '')
+
+        export_func = 'export_control'
+        if export_type:
+            export_func = export_func + '_' + export_type
+
+        items_list = cls.objects.filter(*args, **kwargs)
+        return [getattr(item, export_func)(**params) for item in items_list]
 
     def export_control(self):
         data = {}
@@ -194,13 +222,13 @@ class Card(Base):
 class Source(Base):
     field = models.ForeignKey('Card', related_name='program', null=True, blank=True, default=None)
 
-    sourceTitle = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Title'))
-    sourceAuthor = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Author'))
+    source_title = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Title'))
+    source_author = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Author'))
 
-    sourceFormat = models.CharField(max_length=20, blank=True, default='', verbose_name=_(u'Format'))
-    sourceType = models.CharField(max_length=20, blank=True, default='', verbose_name=_(u'Type'))
-    sourceLength = models.CharField(max_length=20, blank=True, default='', verbose_name=_(u'Length'))
-    sourceFree = models.BooleanField(blank=True, default=True, verbose_name=u'Is free')
+    source_format = models.CharField(max_length=20, blank=True, default='', verbose_name=_(u'Format'))
+    source_type = models.CharField(max_length=20, blank=True, default='', verbose_name=_(u'Type'))
+    source_length = models.CharField(max_length=20, blank=True, default='', verbose_name=_(u'Length'))
+    source_free = models.BooleanField(blank=True, default=True, verbose_name=u'Is free')
 
     @classmethod
     def import_item(cls, data, parent=None):

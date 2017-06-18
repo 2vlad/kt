@@ -2,7 +2,7 @@
 from django.http import Http404
 from django.views.generic import TemplateView
 
-from front.models import About, Card
+from front.models import About, Card, Source
 
 
 # Базовая вьюха, от которой наследуются остальные
@@ -42,8 +42,14 @@ class CardView(BaseView):
 
         context = super(CardView, self).get_context_data(**kwargs)
 
+        # print(obj['field'])
+        # field = obj['field']
+
+        # sources = [s.export_control() for s in Source.objects.filter(id=1)]
+
         context.update({
-            'card': obj
+            'card': obj,
+            # 'sources': sources
         })
 
         return context

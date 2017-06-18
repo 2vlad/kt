@@ -12,7 +12,7 @@ module.exports = AbstractItem.extend({
     events: function () {
         return _.extend({}, AbstractItem.prototype.events, {
             'click .Source-anchor': 'openEditor',
-            'change input[name=onMain]': 'change'
+            'change input[name=isFree]': 'change'
         });
     },
 
@@ -30,6 +30,7 @@ module.exports = AbstractItem.extend({
 
     openEditor: function () {
         window.app.router.control.view.card.sourcePopup.open(this.model);
+        // window.app.router.view.personPopup.open(this.model);
     }
 });
 
