@@ -4,7 +4,7 @@
 
 {% macro Button(title, tag='button', classes=[], attrs=[]) %}
     <{{ tag }}
-    class="Button {{ classes|join(' ') }}" {% for a in attrs -%}{{ a }} {% endfor %}>
+    class="Button {{ classes }}" {% for a in attrs -%}{{ a }} {% endfor %}>
         {{ title }}
     </{{ tag }}>
 {% endmacro %}
