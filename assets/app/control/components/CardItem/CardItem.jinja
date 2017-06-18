@@ -4,7 +4,8 @@
 <div class="CardItem">
     <a class="CardItem-link" href="/control/cards/{{ model.id }}">
 {#      <div class="ProjectItem-img" style="background-image: url({{ model.outer.url|safe }});"></div>#}
-        <div class="CardItem-title">{{ model.title|safe }}</div>
+        <div class="CardItem-title">{{ model.field }}</div>
+        <div class="CardItem-subtitle">{{ model.expert }}</div>
     </a>
     <div class="CardItem-remove">
         {% call BtnRemove.BtnRemove() %}{% endcall %}

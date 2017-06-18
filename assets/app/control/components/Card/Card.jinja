@@ -2,12 +2,40 @@
 
 {% from 'control/components/Input/Input.jinja' import Input %}
 {% from 'control/components/Textarea/Textarea.jinja' import Textarea %}
-{#{% from 'control/components/ImgUpload/ImgUpload.jinja' import ImgUpload %}#}
+{% import 'control/components/GridAdd/GridAdd.jinja' as GridAdd %}
 
 <div class="Card">
     <div class='Form'>
         <div class='Form-row'>
-            {{ Input(label='Card title', name='title', value=model.title) }}
+            {{ Input(label='Field name', name='field', value=model.field) }}
+        </div>
+        <div class='Form-row'>
+            {{ Textarea(label='Definition of the field', name='definition', value=model.definition, id='definition', modifiers=['noToolbar']) }}
+        </div>
+        <div class='Form-row Card-expertBlock'>
+            {{ Input(label='Expert name', name='expert', value=model.expert) }}
+        </div>
+        <div class='Form-row'>
+            {{ Textarea(label='Expert position', name='position', value=model.position, id='position', modifiers=['noToolbar']) }}
+        </div>
+
+        <div class="Form-row Card-resources">
+            <div class="Card-line"></div>
+            <label class="Card-label">Sources</label>
+
+            <div class="Card-sources">
+                <ul class="Card-sourcesList u-List">
+                    {% call GridAdd.GridAdd(listAdd=false, modifiers=['programSource']) %}
+                        <button class="GridAdd-button GridAdd-button--fullSize">
+                            <span class="GridAdd-buttonText">
+                                <span class="GridAdd-underline">Add source</span>
+                            </span>
+                        </button>
+                    {% endcall %}
+                </ul>
+            </div>
         </div>
     </div>
+
+    <div class="SourcePopup"></div>
 </div>

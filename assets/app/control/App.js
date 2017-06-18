@@ -9,6 +9,7 @@ require('material-design-lite/material.min.css');
 require('material-design-lite/material.min.js');
 
 require('control/components/GridAdd/GridAdd.js');
+require('control/components/GridItem/GridItem.js');
 require('control/components/BtnRemove/BtnRemove.js');
 require('control/components/Btn/Btn');
 

@@ -1,0 +1,14 @@
+{%- import 'control/components/BtnRemove/BtnRemove.jinja' as BtnRemove -%}
+
+{% macro GridItem(model, modifiers=[], classes=[]) -%}
+    <div class="GridItem {% for m in modifiers %}GridItem--{{ m }} {% endfor %} mdl-card mdl-shadow--2dp
+         {{ classes|join(' ') }}">
+        <div class="GridItem-remove {% for m in modifiers %}GridItem-remove--{{ m }} {% endfor %}">
+            {% call BtnRemove.BtnRemove() %}{% endcall %}
+        </div>
+
+        <div class="GridItem-content">
+            {{ caller() }}
+        </div>
+    </div>
+{%- endmacro %}

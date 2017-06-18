@@ -149,7 +149,11 @@ class Base(Export):
 
 
 class Card(Base):
-    title = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Card'))
+    field = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Field'))
+    definition = models.CharField(max_length=500, blank=True, default='', verbose_name=_(u'Definition'))
+
+    expert = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Expert'))
+    position = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Position'))
 
     @classmethod
     def get_or_create(cls):
@@ -165,8 +169,10 @@ class Card(Base):
 
         data.update({
             'id': self.id,
-            'title': self.title,
-            # 'url': self.get_control_url()
+            'field': self.field,
+            'definition': self.definition,
+            'expert': self.expert,
+            'position': self.position
         })
 
         return data
@@ -176,14 +182,54 @@ class Card(Base):
 
         data.update({
             'id': self.id,
-            'title': self.title,
-            # 'url': self.get_control_url()
+            'field': self.field,
+            'definition': self.definition,
+            'expert': self.expert,
+            'position': self.position
         })
 
         return data
 
-    # def get_control_url(self):
-        # return reverse('control:experts', kwargs={'obj_id': self.id})
+
+class Source(Base):
+    field = models.ForeignKey('Card', related_name='program', null=True, blank=True, default=None)
+
+    sourceTitle = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Title'))
+    sourceAuthor = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Author'))
+
+    sourceFormat = models.CharField(max_length=20, blank=True, default='', verbose_name=_(u'Format'))
+    sourceType = models.CharField(max_length=20, blank=True, default='', verbose_name=_(u'Type'))
+    sourceLength = models.CharField(max_length=20, blank=True, default='', verbose_name=_(u'Length'))
+    sourceFree = models.BooleanField(blank=True, default=True, verbose_name=u'Is free')
+
+    @classmethod
+    def import_item(cls, data, parent=None):
+        if parent:
+            data['card'] = {'id': parent.id}
+
+        model, temp_data = cls.simple_import(data)
+
+        if model is None:
+            return
+
+        model.save()
+
+        return model
+
+    def export_front(self):
+        data = self.simple_export()
+
+        return data
+
+    def export_control(self):
+        data = self.simple_export()
+
+        return data
+
+    class Meta:
+        ordering = ('order', 'id',)
+        verbose_name = _(u'source')
+        verbose_name_plural = _(u'Source')
 
 
 class About(Base):

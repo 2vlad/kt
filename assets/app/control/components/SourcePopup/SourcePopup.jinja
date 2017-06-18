@@ -1,0 +1,38 @@
+{% import 'control/components/Btn/Btn.jinja' as Btn %}
+{% import 'control/components/Input/Input.jinja' as Input %}
+{% import 'control/components/Textarea/Textarea.jinja' as Textarea %}
+
+
+<div class="SourcePopup-content">
+    <section class="SourcePopup--main">
+        <h2 class="SourcePopup-header">Add source</h2>
+        <div class="Form">
+            <div class="Form-row">
+                {% call Input.Input(label='Source title', name='sourceTitle', value=model.sourceTitle) %}{% endcall %}
+            </div>
+            <div class="Form-row">
+                {% call Input.Input(label='Source author', name='sourceAuthor', value=model.sourceAuthor) %}{% endcall %}
+            </div>
+{#            <div class="Form-row">#}
+{#                {% call Textarea.Textarea(label='Текст', name='sourceText', id='about', value=model.sourceText, modifiers=['noToolbar']) %}{% endcall %}#}
+{#            </div>#}
+            <div class="Form-row">
+                {% call Input.Input(label='Source format', name='sourceFormat', value=model.sourceFormat) %}{% endcall %}
+            </div>
+            <div class="Form-row">
+                {% call Input.Input(label='Source length', name='sourceLength', value=model.sourceLength) %}{% endcall %}
+            </div>
+        </div>
+    </section>
+
+    <div class="Submit">
+        {% call Btn.Btn('Save', classes=['AbstractPopup-save'], primary=True) %}{% endcall %}
+    </div>
+
+    <button class="AbstractPopup-close SourcePopup-close u-Btn">
+        <svg viewBox="0 0 24 24">
+            <path fill="#000000"
+                  d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"/>
+        </svg>
+    </button>
+</div>

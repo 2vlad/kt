@@ -1,0 +1,9 @@
+{% import 'control/components/GridItem/GridItem.jinja' as GridItem %}
+{% import 'control/components/Input/Input.jinja' as Input %}
+
+
+{% call GridItem.GridItem(model, modifiers=['programSource']) %}
+    <a class="Source-anchor">
+        <span class="Badge">{{ model.sourceTitle }}</span>
+    </a>
+{% endcall %}
