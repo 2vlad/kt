@@ -2,9 +2,9 @@
    classes - с списком классов, для добавления
    attrs - с доп аттрибутами компоненты #}
 
-{% macro Button(title, tag='button', classes=[], attrs=[]) %}
+{% macro Button(title, tag='button', classes=[], attrs=[], class='') %}
     <{{ tag }}
-    class="Button {{ classes }}" {% for a in attrs -%}{{ a }} {% endfor %}>
+    class="Button {{ classes|join(' ') }} {{ class }}" {% for a in attrs -%}{{ a }} {% endfor %}>
         {{ title }}
     </{{ tag }}>
 {% endmacro %}
