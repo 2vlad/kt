@@ -25,7 +25,17 @@
                         {{ CardResource(r) }}
                     {% endfor %}
                 </div>
-            </div>
+                {% if data.experts.background %}
+                    <div class="Card2-backgroundBox">
+                        <div class="Card2-backgroundTitle">Рекомендуемый бэкграунд</div>
+                        <div class="Card2-backgroundBody">
+                            <div class="Card2-backgroundUnit">
+                                {{ data.experts.background|safe }}
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                {% endif %}
         </div>
     </div>
 {% endmacro %}

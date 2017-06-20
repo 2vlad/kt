@@ -9,10 +9,12 @@ index = {
         'name': u'Elon Musk',
         'position': u'CEO of SpaceX',
 
+        'background': u'HTML, CSS',
+
         'resources': [
             {
                 'type': u'read',
-                'name': u'Современный учебник JavaScript в 3 книгах',
+                'name': u'Современный учебник JavaScript в 3-x книгах',
                 'author': u'Илья Кантор',
                 'format': u'pdf',
                 'howLong': u'1461 стр',
@@ -21,7 +23,7 @@ index = {
             },
             {
                 'type': u'read',
-                'name': u'JavaScript. Подробное руководство. 6-е издание, 2012',
+                'name': u'JavaScript. Подробное руководство',
                 'author': u'Дэвид Флэнаган',
                 'format': u'pdf',
                 'howLong': u'1080 стр',
@@ -39,7 +41,7 @@ index = {
             },
             {
                 'type': u'watch',
-                'name': u'Learn ES6 (ECMAScript 2015)',
+                'name': u'Learn ES6',
                 'author': u'John Lindquist',
                 'format': u'egghead',
                 'howLong': u'53 мин',

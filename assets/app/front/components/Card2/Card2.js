@@ -12,5 +12,13 @@ module.exports = Backbone.View.extend({
 
         this.cardResource = new CardResource();
 
+        // var bgUnit = $('.Card2-backgroundUnit');
+        //
+        // console.log(bgUnit.length);
+        // for (i = 0; i < bgUnit.length - 1; i++) {
+        //     var value = $(bgUnit[i]).html();
+        //     console.log(value);
+        //     $(bgUnit[i]).text(value + ', ');
+        // }
     }
 });
