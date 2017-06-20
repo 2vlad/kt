@@ -2,7 +2,7 @@ var Backbone = require('backbone');
 var _ = require('underscore');
 
 var Index = require('front/pages/Index/Index');
-var AboutPage = require('control/pages/AboutPage/AboutPage');
+var About = require('front/pages/About/About');
 var NotFound = require('front/pages/NotFound/NotFound');
 
 module.exports = Backbone.Router.extend({
@@ -14,8 +14,8 @@ module.exports = Backbone.Router.extend({
         this.activate(Index);
     },
 
-    aboutPage: function () {
-        this.activate(AboutPage);
+    about: function () {
+        this.activate(About);
     },
 
     notFound: function () {
