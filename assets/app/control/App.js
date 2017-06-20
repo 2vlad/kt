@@ -40,6 +40,6 @@ window.app.els = {
     $htmlBody: $('html,body'),
     $content: $('.Content')
 };
-app.router = new Router();
 
+app.router = new Router();
 app.router.start();

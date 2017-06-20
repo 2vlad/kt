@@ -45,11 +45,14 @@ class CardView(BaseView):
         # print(obj['field'])
         # field = obj['field']
 
-        # sources = [s.export_control() for s in Source.objects.filter(id=1)]
+        sources = [s.export_control() for s in Source.objects.filter(field_id=obj_id)]
+
+        print(sources)
 
         context.update({
             'card': obj,
-            # 'sources': sources
+            # 'lostProjects': [n.export_control() for n in Source.objects.filter(id=None).order_by('order')],
+            'sources': sources
         })
 
         return context

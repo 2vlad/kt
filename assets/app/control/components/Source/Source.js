@@ -29,8 +29,7 @@ module.exports = AbstractItem.extend({
     },
 
     openEditor: function () {
-        window.app.router.control.view.card.sourcePopup.open(this.model);
-        // window.app.router.view.personPopup.open(this.model);
+        window.app.router.view.card.sourcePopup.open(this.model);
     }
 });
 

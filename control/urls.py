@@ -26,8 +26,8 @@ urlpatterns += [url(r'^api/about/$', AboutAjaxView.as_view()),
                 url(r'^api/cards/$', CardAjaxView.as_view()),
                 url(r'^api/cards/(?P<obj_id>\w+)$', CardAjaxView.as_view()),
 
-                url(r'^api/source/$', SourceAjaxView.as_view()),
-                url(r'^api/source/(?P<obj_id>\w+)$', SourceAjaxView.as_view()),
+                # url(r'^api/source/$', SourceAjaxView.as_view()),
+                # url(r'^api/source/(?P<obj_id>\w+)$', SourceAjaxView.as_view()),
 
                 url(r'^api/sources/$', SourceAjaxView.as_view()),
                 url(r'^api/sources/(?P<obj_id>\w+)$', SourceAjaxView.as_view()),

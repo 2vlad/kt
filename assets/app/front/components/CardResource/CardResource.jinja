@@ -3,12 +3,13 @@
 {% macro CardResource(data={}) %}
     <a href="{{ data.link }}" class="CardResource-link">
         <div class="CardResource">
-            <div class="CardResource-typeOfResource">{{ data.type }}</div>
+            <div class="CardResource-num"></div>
 
             {# отдельный ресурс #}
             <div class="CardResource-resources">
                 <div class="CardResource-resourceName">{{ data.name }}</div>
                 <div class="CardResource-resourceAuthor">{{ data.author }}</div>
+                <div class="CardResource-typeOfResource">{{ data.type }}</div>
                 <div class="CardResource-resourceFormat">{{ data.format }}</div>
                 <div class="CardResource-resourceLength">{{ data.howLong }}</div>
                 <div class="CardResourceCard2-isFree"></div>

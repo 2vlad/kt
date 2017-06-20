@@ -24,6 +24,7 @@
     {{ super() }}
 
     app.data.card = {{ card|jsonify|safe }};
+    app.data.sources = {{ sources|jsonify|safe }};
 {% endblock %}
 
 {% block libs %}

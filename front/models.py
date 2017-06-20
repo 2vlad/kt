@@ -157,14 +157,17 @@ class Card(Base):
 
     @classmethod
     def import_item(cls, data, parent=None):
-        source_data = data.pop('program')
+        program = data.pop('program')
+
+        print('program')
+        print(program)
 
         model, temp_data = cls.simple_import(data)
 
         if model is None:
             return
 
-        Source.import_all(source_data, model)
+        Source.import_all(program, parent=model)
 
         model.save()
 
@@ -232,8 +235,11 @@ class Source(Base):
 
     @classmethod
     def import_item(cls, data, parent=None):
+        # if parent:
+        #     data['card'] = {'id': parent.id}
+
         if parent:
-            data['card'] = {'id': parent.id}
+            data['field_id'] = parent.id
 
         model, temp_data = cls.simple_import(data)
 
@@ -253,6 +259,19 @@ class Source(Base):
         data = self.simple_export()
 
         return data
+
+    @classmethod
+    def export_control_all(cls, *args, **kwargs):
+        params = {}
+
+        export_type = kwargs.pop('export_type', '')
+
+        export_func = 'export_control'
+        if export_type:
+            export_func = export_func + '_' + export_type
+
+        items_list = cls.objects.filter(*args, **kwargs)
+        return [getattr(item, export_func)(**params) for item in items_list]
 
     class Meta:
         ordering = ('order', 'id',)

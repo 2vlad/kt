@@ -9,7 +9,7 @@ var CardListPage = require('control/pages/CardListPage/CardListPage');
 module.exports = Backbone.Router.extend({
     routes: {
         'control/': 'cardListPage',
-        'control/cards/(:id/)': 'cardPage',
+        'control/cards/(:id/)': 'card',
         'control/about/': 'aboutPage'
     },
 
@@ -17,7 +17,7 @@ module.exports = Backbone.Router.extend({
         this.activate(CardListPage);
     },
 
-    cardPage: function () {
+    card: function () {
         this.activate(CardPage);
     },
 
