@@ -21,9 +21,9 @@ module.exports = Backbone.View.extend({
         this.card = new Card({
             el: this.$('.Card-form'),
             model: this.model
+            // program: app.data.program
         });
     },
-
     render: function () {
         this.card.render();
     },

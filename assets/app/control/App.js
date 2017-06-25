@@ -19,6 +19,7 @@ require('control/components/Button/Button');
 require('control/components/Textarea/Textarea');
 require('control/components/Input/Input');
 require('control/components/Card/Card');
+require('control/components/Source/Source');
 
 require('reset.css');
 require('control/style.less');

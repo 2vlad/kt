@@ -23,11 +23,14 @@ module.exports = AbstractForm.extend({
     },
 
     initialize: function (options) {
+        // this.program = options.program;
         AbstractForm.prototype.initialize.call(this, options);
     },
 
     render: function () {
         this.innerModel = this.model;
+        // this.programCollection = new SourceCollection(this.program);
+
         this.$el.html(this.template.render({
             model: this.model.toJSON()
         }));
@@ -37,15 +40,15 @@ module.exports = AbstractForm.extend({
             model: this.innerModel
         });
 
-        this.sources = new AbstractList({
-            el: this.$('.Card-sources'),
+        this.program = new AbstractList({
+            el: this.$('.Card-sourcesList'),
             itemView: Source,
             collection: this.model.get('program'),
-            autosave: false,
+            // autosave: false,
             insertNew: 'append',
             prependBeforeButton: true
         });
-        this.sources.render();
+        this.program.render();
 
         this.sourcePopup = new SourcePopup({
             el: this.$('.SourcePopup'),

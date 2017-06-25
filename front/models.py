@@ -159,9 +159,6 @@ class Card(Base):
     def import_item(cls, data, parent=None):
         program = data.pop('program')
 
-        print('program')
-        print(program)
-
         model, temp_data = cls.simple_import(data)
 
         if model is None:
@@ -203,7 +200,8 @@ class Card(Base):
             'field': self.field,
             'definition': self.definition,
             'expert': self.expert,
-            'position': self.position
+            'position': self.position,
+            'program': Source.export_control_all(field_id=self.id)
         })
 
         return data
@@ -233,6 +231,8 @@ class Source(Base):
     source_length = models.CharField(max_length=20, blank=True, default='', verbose_name=_(u'Length'))
     source_free = models.BooleanField(blank=True, default=True, verbose_name=u'Is free')
 
+    source_link = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Link'))
+
     @classmethod
     def import_item(cls, data, parent=None):
         # if parent:
@@ -259,19 +259,6 @@ class Source(Base):
         data = self.simple_export()
 
         return data
-
-    @classmethod
-    def export_control_all(cls, *args, **kwargs):
-        params = {}
-
-        export_type = kwargs.pop('export_type', '')
-
-        export_func = 'export_control'
-        if export_type:
-            export_func = export_func + '_' + export_type
-
-        items_list = cls.objects.filter(*args, **kwargs)
-        return [getattr(item, export_func)(**params) for item in items_list]
 
     class Meta:
         ordering = ('order', 'id',)

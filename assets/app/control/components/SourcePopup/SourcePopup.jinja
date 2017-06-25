@@ -8,19 +8,30 @@
         <h2 class="SourcePopup-header">Add source</h2>
         <div class="Form">
             <div class="Form-row">
-                {% call Input.Input(label='Source title', name='sourceTitle', value=model.sourceTitle) %}{% endcall %}
+                {% call Input.Input(label='Title', name='sourceTitle', value=model.sourceTitle) %}{% endcall %}
             </div>
             <div class="Form-row">
-                {% call Input.Input(label='Source author', name='sourceAuthor', value=model.sourceAuthor) %}{% endcall %}
+                {% call Input.Input(label='Author', name='sourceAuthor', value=model.sourceAuthor) %}{% endcall %}
             </div>
-{#            <div class="Form-row">#}
-{#                {% call Textarea.Textarea(label='Текст', name='sourceText', id='about', value=model.sourceText, modifiers=['noToolbar']) %}{% endcall %}#}
-{#            </div>#}
+            {#            <div class="Form-row">#}
+            {#                {% call Textarea.Textarea(label='Текст', name='sourceText', id='about', value=model.sourceText, modifiers=['noToolbar']) %}{% endcall %}#}
+            {#            </div>#}
             <div class="Form-row">
-                {% call Input.Input(label='Source format', name='sourceFormat', value=model.sourceFormat) %}{% endcall %}
+                {% call Input.Input(label='Format', name='sourceFormat', value=model.sourceFormat) %}{% endcall %}
             </div>
             <div class="Form-row">
-                {% call Input.Input(label='Source length', name='sourceLength', value=model.sourceLength) %}{% endcall %}
+                {% call Input.Input(label='Length', name='sourceLength', value=model.sourceLength) %}{% endcall %}
+            </div>
+            <div class="Form-row">
+                {% call Input.Input(label='Link', name='sourceLength', value=model.sourceLength) %}{% endcall %}
+            </div>
+            <div class="Course-checkboxRow">
+                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect Course-checkbox"
+                       for="is-middle-{{ cid }}">
+                    <input type="checkbox" id="is-middle-{{ cid }}" class="mdl-checkbox__input" name="isMiddle"
+                           {% if model.isMiddle %}checked{% endif %}/>
+                </label>
+                <span class="mdl-checkbox__label Course-checkboxLabel">Is free?</span>
             </div>
         </div>
     </section>
