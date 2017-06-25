@@ -51,7 +51,7 @@ module.exports = AbstractForm.extend({
         this.program.render();
 
         this.sourcePopup = new SourcePopup({
-            el: this.$('.SourcePopup'),
+            el: $('.SourcePopup'),
             editedCollection: this.model.get('program')
         });
 

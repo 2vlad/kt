@@ -31,9 +31,7 @@ app.configure();
 
 window.app.vent = _.extend({}, Backbone.Events);
 
-window.app.state = {
-
-};
+window.app.state = {};
 
 window.app.els = {
     $window: $(window),

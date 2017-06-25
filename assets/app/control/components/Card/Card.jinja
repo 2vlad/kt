@@ -5,7 +5,7 @@
 {% import 'control/components/GridAdd/GridAdd.jinja' as GridAdd %}
 
 <div class="Card">
-    <div class='Form'>
+    <form class='Form'>
         <div class='Form-row'>
             {{ Input(label='Field name', name='field', value=model.field) }}
         </div>
@@ -35,7 +35,6 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </form>
 
-    <div class="SourcePopup"></div>
 </div>

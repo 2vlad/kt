@@ -12,6 +12,13 @@ module.exports = AbstractPopup.extend({
 
     className: 'SourcePopup',
 
+    events: {
+        'click .AbstractPopup-close': 'close',
+        'click .AbstractPopup-save': 'save',
+        'change input, textarea': 'change',
+        'submit form': 'save'
+    },
+
     render: function () {
         this.$el.html(this.template.render({model: this.model.toJSON()}));
 
