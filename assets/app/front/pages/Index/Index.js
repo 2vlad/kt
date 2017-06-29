@@ -20,10 +20,15 @@ module.exports = Base.extend({
             // Show only matching TR, hide rest of them
             $.each($('.Card2'), function () {
                 console.log($(this));
-                if ($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
+                if ($(this).text()
+                        .toLowerCase()
+                        .indexOf($(this)
+                            .val()
+                            .toLowerCase()) == -1) {
                     $(this).hide();
-                else
+                } else {
                     $(this).show();
+                }
             });
         });
     }
