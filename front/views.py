@@ -3,7 +3,7 @@
 from django.views.generic import TemplateView
 import data
 
-from front.models import About
+from front.models import About, Card
 
 # Базовая вьюха, от которой наследуются остальные
 class BaseView(TemplateView):
@@ -22,6 +22,7 @@ class IndexView(BaseView):
 
         context.update({
             'data': data.index,
+            'cards': Card.export_front_all()
         })
 
         return context

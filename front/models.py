@@ -155,6 +155,8 @@ class Card(Base):
     expert = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Expert'))
     position = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Position'))
 
+    background = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Background'))
+
     @classmethod
     def import_item(cls, data, parent=None):
         program = data.pop('program')
@@ -201,6 +203,7 @@ class Card(Base):
             'definition': self.definition,
             'expert': self.expert,
             'position': self.position,
+            'background': self.background,
             'program': Source.export_control_all(field_id=self.id)
         })
 
@@ -214,7 +217,9 @@ class Card(Base):
             'field': self.field,
             'definition': self.definition,
             'expert': self.expert,
-            'position': self.position
+            'position': self.position,
+            'background': self.background,
+            'program': Source.export_control_all(field_id=self.id)
         })
 
         return data
@@ -235,8 +240,6 @@ class Source(Base):
 
     @classmethod
     def import_item(cls, data, parent=None):
-        # if parent:
-        #     data['card'] = {'id': parent.id}
 
         if parent:
             data['field_id'] = parent.id

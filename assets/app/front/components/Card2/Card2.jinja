@@ -9,28 +9,28 @@
             {# левая колонка карточки #}
             <div class="Card2-field">
                 <div class="Card2-fieldName">{{ data.field }}</div>
-                <div class="Card2-fieldDescription">{{ data.description }}</div>
+                <div class="Card2-fieldDescription">{{ data.definition|safe }}</div>
             </div>
 
             {# правая колонка карточки #}
             <div class="Card2-expert">
                 <div class="Card2-expertTitle">
-                    <div class="Card2-expertName">{{ data.experts.name }}</div>
-                    <div class="Card2-expertPosition">&nbsp;{{ data.experts.position }}</div>
+                    <div class="Card2-expertName">{{ data.expert }}</div>
+                    <div class="Card2-expertPosition">&nbsp;{{ data.position|safe }}</div>
                 </div>
                 {# все ресурсы #}
                 <div class="Card2-resourcesContainer">
                     {# тип ресурсов #}
-                    {% for r in data.experts.resources %}
-                        {{ CardResource(r) }}
+                    {% for source in data.program %}
+                        {{ CardResource(data=source) }}
                     {% endfor %}
                 </div>
-                {% if data.experts.background %}
+                {% if data.expert %}
                     <div class="Card2-backgroundBox">
                         <div class="Card2-backgroundTitle">Рекомендуемый бэкграунд</div>
                         <div class="Card2-backgroundBody">
                             <div class="Card2-backgroundUnit">
-                                {{ data.experts.background|safe }}
+                                {{ data.background|safe }}
                             </div>
                         </div>
                     </div>

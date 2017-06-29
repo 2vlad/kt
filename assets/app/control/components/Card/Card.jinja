@@ -16,9 +16,11 @@
             {{ Input(label='Expert name', name='expert', value=model.expert) }}
         </div>
         <div class='Form-row'>
-            {{ Textarea(label='Expert position', name='position', value=model.position, id='position', modifiers=['noToolbar']) }}
+            {{ Input(label='Expert position', name='position', value=model.position) }}
         </div>
-
+        <div class="Form-row">
+            {{ Textarea(label='Background', name='background', id='background', value=model.background, modifiers=['noToolbar']) }}
+        </div>
         <div class="Form-row Card-program">
             <div class="Card-line"></div>
             <label class="Card-label">Sources</label>

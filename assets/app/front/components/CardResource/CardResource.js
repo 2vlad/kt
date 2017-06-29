@@ -9,9 +9,20 @@ module.exports = Backbone.View.extend({
     initialize: function () {
 
         var num = $('.CardResource-num');
+        var source = $('.CardResource');
+        var card = $('.Card2-resourcesContainer');
 
         for (i = 0; i < num.length; i++) {
-            $(num[i]).html((i + 1) + '.');
+            // console.log($(card[i]).find('.CardResource-num'));
+
+            $(card[i]).find('.CardResource-num')
+                .each(function (item) {
+                    console.log(item);
+                    $(this).html((item + 1) + '.');
+                });
+            // if (source[i].next().attr('class') == 'CardResource') {
+            //     $(num[i]).html((i + 1) + '.');
+            // }
         }
 
         // var type = $('.CardResource-typeOfResource');

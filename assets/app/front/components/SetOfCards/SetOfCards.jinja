@@ -2,11 +2,13 @@
 
 {% from 'front/components/Card2/Card2.jinja' import Card2 %}
 
-{% macro SetOfCards(data={}) %}
+{% macro SetOfCards(data={}, cards={}) %}
     <div class="SetOfCards">
         <input class="SetOfCards-search" type="text" placeholder="search..."/>
         <div class="SetOfCards-cards">
-            {{ Card2(data) }}
+            {% for card in cards %}
+                {{ Card2(data=card) }}
+            {% endfor %}
         </div>
     </div>
 {% endmacro %}
