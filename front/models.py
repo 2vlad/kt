@@ -231,9 +231,9 @@ class Source(Base):
     source_title = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Title'))
     source_author = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Author'))
 
-    source_format = models.CharField(max_length=20, blank=True, default='', verbose_name=_(u'Format'))
-    source_type = models.CharField(max_length=20, blank=True, default='', verbose_name=_(u'Type'))
-    source_length = models.CharField(max_length=20, blank=True, default='', verbose_name=_(u'Length'))
+    source_format = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Format'))
+    source_type = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Type'))
+    source_length = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Length'))
     source_free = models.BooleanField(blank=True, default=True, verbose_name=u'Is free')
 
     source_link = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Link'))
