@@ -13,5 +13,18 @@ module.exports = Base.extend({
         this.card2 = new Card2();
         this.button = new Button();
         this.$('.Index-button').html(this.button.render().el);
+
+        // Write on keyup event of keyword input element
+        $('#search').keyup(function () {
+            _this = this;
+            // Show only matching TR, hide rest of them
+            $.each($('.Card2'), function () {
+                console.log($(this));
+                if ($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
+                    $(this).hide();
+                else
+                    $(this).show();
+            });
+        });
     }
 });
