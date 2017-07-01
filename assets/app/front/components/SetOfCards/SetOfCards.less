@@ -21,7 +21,7 @@
             min-width: 200px;
             height: 30px;
             font-size: 15px;
-
+            -webkit-appearance: none;
         }
     }
 
@@ -29,6 +29,10 @@
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
+
+        @media (max-width: 375px) {
+            display: block;
+        }
     }
 
 }

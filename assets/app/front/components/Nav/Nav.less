@@ -5,6 +5,12 @@
     height: 50px;
     background-color: #303030;
 
+    @media (max-width: 375px) {
+        display: flex;
+        justify-content: center;
+        padding-left: 0;
+    }
+
     &-title {
         position: relative;
         padding-top: 5px;
@@ -30,7 +36,11 @@
         top: 12px;
 
         @media (max-width: 375px) {
+            position: relative;
+            left: 0;
             width: 150px;
+            text-align: center;
+            font-size: 12px;
         }
     }
 
@@ -43,6 +53,7 @@
         height: 50px;
 
         @media (max-width: 375px) {
+            position: relative;
             width: 140px;
         }
     }
@@ -52,6 +63,13 @@
         position: relative;
         top: -47px;
         left: -38px;
+
+        @media (max-width: 375px) {
+            position: absolute;
+            left: 20px;
+            top: 7px;
+            height: 40px;
+        }
     }
 }
 
