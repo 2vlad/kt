@@ -3,10 +3,10 @@
 @font-face {
     font-family: 'gotham';
     src: url('@{static_url}fonts/GothamPro.oet') format('oet'),
-         url('@{static_url}fonts/GothamPro.otf') format('otf'),
-         url('@{static_url}fonts/GothamPro.svg') format('svg'),
-         url('@{static_url}fonts/GothamPro.ttf') format('ttf'),
-         url('@{static_url}fonts/GothamPro.woff') format('woff');
+    url('@{static_url}fonts/GothamPro.otf') format('otf'),
+    url('@{static_url}fonts/GothamPro.svg') format('svg'),
+    url('@{static_url}fonts/GothamPro.ttf') format('ttf'),
+    url('@{static_url}fonts/GothamPro.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -14,12 +14,24 @@
 @font-face {
     font-family: 'Apercu Pro';
     src: url('@{static_url}fonts/GothamPro-Medium.oet') format('oet'),
-         url('@{static_url}fonts/GothamPro-Medium.otf') format('otf'),
-         url('@{static_url}fonts/GothamPro-Medium.svg') format('svg'),
-         url('@{static_url}fonts/GothamPro-Medium.ttf') format('ttf'),
-         url('@{static_url}fonts/GothamPro-Medium.woff') format('woff');
+    url('@{static_url}fonts/GothamPro-Medium.otf') format('otf'),
+    url('@{static_url}fonts/GothamPro-Medium.svg') format('svg'),
+    url('@{static_url}fonts/GothamPro-Medium.ttf') format('ttf'),
+    url('@{static_url}fonts/GothamPro-Medium.woff') format('woff');
     font-weight: bold; // 600
     font-style: normal;
+}
+
+//@font-face {
+//    font-family: 'fug';
+//    src: url('@{static_url}fonts/fug.otf') format('otf');
+//    font-weight: normal;
+//    font-style: normal;
+//}
+
+@font-face {
+    font-family: 'fug';
+    src: url(/static/fonts/fugue.otf);
 }
 
 *,
@@ -31,7 +43,7 @@
 }
 
 body {
-    font-family: 'gotham', 'Roboto', serif;
+    font-family: 'fug', 'gotham', 'Roboto', serif;
     text-align: center;
 
     position: relative;
