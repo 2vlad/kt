@@ -1,7 +1,9 @@
 {% import 'control/utils/macros.jinja' as macros %}
 
 <nav class="TopNav">
-    <a class="TopNav-title" href="{{ url ('front:index') }}">kompass</a>
+    <a class="TopNav-title" href="{{ url ('front:index') }}">
+        {% call macros.svgSprite('logo') %}{% endcall %}
+    </a>
 
     <div class="TopNav-list">
         <a class="TopNav-a {{ active(request, '^/control/$') }}" href="{{ url ('control:cards') }}">

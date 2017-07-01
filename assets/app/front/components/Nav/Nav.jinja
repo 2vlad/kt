@@ -3,10 +3,13 @@
 {% macro Nav(mods='') %}
     <header class="Nav">
         <a href="/" class="Nav-titleLink">
-            <div class="Nav-title">kompass</div>
+            {#            <div class="Nav-title">kompass</div>#}
+            <div class="Nav-logoBox">
+                {% call macros.svgSprite('logo') %}{% endcall %}
+            </div>
         </a>
         {#        <div class="Header-subtitle">a tool to search for study materials in programming</div>#}
-        <div class="Nav-subtitle">агрегатор проверенных <br>учебных материалов</div>
+        <div class="Nav-subtitle">собираем проверенные ссылки <br>на учебные материалы</div>
         <nav class="Nav">
             <ul>
                 <li class="{{ mods }}"><a href="/about/">о проекте</a></li>
