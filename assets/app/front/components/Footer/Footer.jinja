@@ -1,5 +1,9 @@
 {% import 'front/utils/macros.jinja' as macros %}
 
 {% macro Footer() %}
-    <div class="Footer">картотека</div>
+    <div class="Footer">
+        <div class="Footer-logoBox">
+            {% call macros.svgSprite('logo') %}{% endcall %}
+        </div>
+    </div>
 {% endmacro %}

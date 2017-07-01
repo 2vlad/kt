@@ -2,7 +2,9 @@
 
 <nav class="TopNav">
     <a class="TopNav-title" href="{{ url ('front:index') }}">
-        {% call macros.svgSprite('logo') %}{% endcall %}
+        <div class="TopNav-logoBox">
+            {% call macros.svgSprite('logo') %}{% endcall %}
+        </div>
     </a>
 
     <div class="TopNav-list">
