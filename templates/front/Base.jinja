@@ -9,6 +9,8 @@
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+
     {% block social %}
         <meta property="og:type" content="website"/>
         <meta property="og:image" content="{{ static('img/fb.png') }}"/>
@@ -43,7 +45,8 @@
         <link href="{{ static(bundle('front', 'main.css')) }}" rel="stylesheet">
     {% endblock %}
 </head>
-<body style="position: relative; margin: 0; padding-bottom: 6rem; min-height: 100%;" class="{% block body_class %}{% endblock %}">
+<body style="position: relative; margin: 0; padding-bottom: 6rem; min-height: 100%;"
+      class="{% block body_class %}{% endblock %}">
 <img style="display:none" alt="" src="{{ static('svg/front/symbol/svg/sprite.symbol.svg') }}">
 
 {% block before_content %}{% endblock %}
