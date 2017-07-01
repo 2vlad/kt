@@ -19,12 +19,7 @@ module.exports = Base.extend({
             _this = this;
             // Show only matching TR, hide rest of them
             $.each($('.Card2'), function () {
-                console.log($(this));
-                if ($(this).text()
-                        .toLowerCase()
-                        .indexOf($(this)
-                            .val()
-                            .toLowerCase()) == -1) {
+                if ($(this).text().toLowerCase().indexOf($(this).val().toLowerCase()) == -1) {
                     $(this).hide();
                 } else {
                     $(this).show();

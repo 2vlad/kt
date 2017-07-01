@@ -60,7 +60,7 @@ class CardView(BaseView):
     def get_context_data(self, **kwargs):
         context = super(CardView, self).get_context_data(**kwargs)
 
-        obj_id = int(kwargs.get('obj_id'))
+        obj_id = kwargs.get('obj_id')
 
         if obj_id:
             try:
