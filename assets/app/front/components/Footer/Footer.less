@@ -10,9 +10,18 @@
     bottom: 0;
     padding-left: 41%;
 
+    @media (max-width: 375px) {
+        margin: 0 auto;
+        padding-left: 0;
+    }
+
     &-logoBox {
         width: 200px;
         height: 50px;
+
+        @media (max-width: 375px) {
+            width: auto;
+        }
     }
 
     &-logoBox svg {

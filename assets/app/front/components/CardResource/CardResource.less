@@ -14,6 +14,10 @@
         //box-shadow: 1px 1px 2px 1px rgba(140, 140, 140, 0.2);
     }
 
+    @media (max-width: 375px) {
+        max-width: 85vw;
+    }
+
     &-link {
         text-decoration: none;
         color: #191919;
@@ -25,11 +29,47 @@
         color: #acacac;
         font-size: 13px;
         font-weight: bold;
+
+        @media (max-width: 375px) {
+            padding: 2px 0 0 0;
+            position: relative;
+            left: -11px;
+            width: auto;
+        }
     }
 
     &-resources {
         display: flex;
         width: 90%;
+
+        @media (max-width: 375px) {
+            display: block;
+        }
+    }
+
+    &-mobile--extraInfoBox {
+        display: none;
+
+        @media (max-width: 375px) {
+            display: flex;
+        }
+
+        &---typeOfResource {
+            padding: 0 10px 0 10px;
+            min-width: 15%;
+            font-size: 13px;
+            padding-left: 0px;
+            color: #acacac;
+        }
+
+        &---resourceLength {
+            padding: 0 10px 0 10px;
+            color: #acacac;
+            min-width: 15%;
+            font-size: 13px;
+            padding-left: 0;
+            color: #acacac;
+        }
     }
 
     &-typeOfResource {
@@ -38,6 +78,12 @@
         min-width: 15%;
         font-size: 13px;
         color: #acacac;
+
+        @media (max-width: 375px) {
+            display: none;
+            padding-left: 0px;
+            width: 100%;
+        }
     }
 
     &-resourceName,
@@ -45,16 +91,32 @@
     &-resourceLength,
     &-isFree {
         padding: 0 10px 0 10px;
+
+        @media (max-width: 375px) {
+            width: 100%;
+            padding: 0 10px 0 0px;
+        }
     }
 
     &-resourceName {
         width: 50%;
         min-width: 50%;
+
+        @media (max-width: 375px) {
+            width: 100%;
+            padding: 0 10px 0 0px;
+            font-size: 17px;
+        }
     }
 
     &-resourceAuthor {
         width: 25%;
         min-width: 25%;
+
+        @media (max-width: 375px) {
+            padding: 10px 0 5px 0;
+            width: 100%;
+        }
     }
 
     &-resourceFormat {
@@ -71,6 +133,12 @@
         width: 15%;
         min-width: 15%;
         font-size: 13px;
+
+        @media (max-width: 375px) {
+            display: none;
+            width: 100%;
+            padding-left: 0;
+        }
     }
 
     &-isFree {

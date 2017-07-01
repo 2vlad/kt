@@ -7,23 +7,40 @@
     background-color: rgba(0, 0, 0, 0.05);
     border-radius: 10px;
 
+    @media (max-width: 375px) {
+        max-width: 365px;
+    }
+
     &-title {
         display: flex;
         padding: 0 20px 0 20px;
         min-width: 1100px;
         font-size: 25px;
         line-height: 45px;
+
+        @media (max-width: 375px) {
+            display: block;
+            min-width: auto;
+        }
     }
 
     &-field {
         flex: 1;
         padding: 20px 0px 20px 20px;
+
+        @media (max-width: 375px) {
+            padding: 20px 0 10px 0;
+        }
     }
 
     &-fieldName {
         flex-grow: 1;
         text-align: left;
         text-transform: uppercase;
+
+        @media (max-width: 375px) {
+            font-size: 25px;
+        }
     }
 
     &-fieldDescription {
@@ -38,6 +55,10 @@
         flex-grow: 5;
         padding: 20px 0 20px 20px;
         font-size: 20px;
+
+        @media (max-width: 375px) {
+            padding-top: 0;
+        }
     }
 
     &-expertPosition {
@@ -47,6 +68,10 @@
     &-expertTitle {
         padding-left: 5px;
         display: flex;
+
+        @media (max-width: 375px) {
+            display: none;
+        }
     }
 
     &-resourcesContainer {

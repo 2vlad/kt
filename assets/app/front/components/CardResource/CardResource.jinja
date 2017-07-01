@@ -10,9 +10,14 @@
                 <div class="CardResource-resourceName">{{ data.sourceTitle }}</div>
                 <div class="CardResource-resourceAuthor">{{ data.sourceAuthor }}</div>
                 <div class="CardResource-typeOfResource">{{ data.sourceType }}</div>
-{#                <div class="CardResource-resourceFormat">{{ data.sourceFormat }}</div>#}
+                {#                <div class="CardResource-resourceFormat">{{ data.sourceFormat }}</div>#}
                 <div class="CardResource-resourceLength">{{ data.sourceLength }}</div>
-{#                <div class="CardResourceCard2-isFree"></div>#}
+                {#                <div class="CardResourceCard2-isFree"></div>#}
+
+                <div class="CardResource-mobile--extraInfoBox">
+                    <div class="CardResource-mobile--extraInfoBox---typeOfResource">{{ data.sourceType }}</div>
+                    <div class="CardResource-mobile--extraInfoBox---resourceLength">{{ data.sourceLength }}</div>
+                </div>
             </div>
         </div>
     </a>
