@@ -15,8 +15,12 @@
             {# правая колонка карточки #}
             <div class="Card2-expert">
                 <div class="Card2-expertTitle">
-                    <div class="Card2-expertName">{{ data.expert }}</div>
-                    <div class="Card2-expertPosition">&nbsp;{{ data.position|safe }}</div>
+                    {% if data.expert %}
+                        <div class="Card2-expertName">{{ data.expert }}</div>
+                    {% endif %}
+                    {% if data.position %}
+                        <div class="Card2-expertPosition">&nbsp;{{ data.position|safe }}</div>
+                    {% endif %}
                 </div>
                 {# все ресурсы #}
                 <div class="Card2-resourcesContainer">
@@ -25,7 +29,7 @@
                         {{ CardResource(data=source) }}
                     {% endfor %}
                 </div>
-                {% if data.expert %}
+                {% if data.background %}
                     <div class="Card2-backgroundBox">
                         <div class="Card2-backgroundTitle">Рекомендуемый бэкграунд</div>
                         <div class="Card2-backgroundBody">
@@ -34,8 +38,8 @@
                             </div>
                         </div>
                     </div>
-                    </div>
                 {% endif %}
+            </div>
         </div>
     </div>
 {% endmacro %}
