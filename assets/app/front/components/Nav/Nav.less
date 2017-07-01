@@ -52,10 +52,14 @@
         width: 200px;
         height: 50px;
 
-        @media (max-width: 765px) {
+        @media (max-width: 375px) {
             position: relative;
             width: 140px;
         }
+
+        //@media (max-width: 765px) {
+        //    width: 160px;
+        //}
     }
 
     &-logoBox svg {
@@ -64,9 +68,16 @@
         top: -47px;
         left: -38px;
 
-        @media (max-width: 765px) {
+        @media (max-width: 375px) {
             position: absolute;
             left: 20px;
+            top: 7px;
+            height: 40px;
+        }
+
+        @media (max-width: 765px) {
+            position: absolute;
+            left: 0;
             top: 7px;
             height: 40px;
         }
