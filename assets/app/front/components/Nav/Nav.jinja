@@ -1,6 +1,6 @@
 {% import 'front/utils/macros.jinja' as macros %}
 
-{% macro Nav() %}
+{% macro Nav(mods='') %}
     <header class="Nav">
         <a href="/" class="Nav-titleLink">
             <div class="Nav-title">kompass</div>
@@ -10,6 +10,11 @@
         </a>
         {#        <div class="Header-subtitle">a tool to search for study materials in programming</div>#}
         <div class="Nav-subtitle">собираем проверенные<br> учебные материалы</div>
+        {#        <nav class="Nav">#}
+        {#            <ul>#}
+        {#                <li class="{{ mods }}"><a href="/about/">о проекте</a></li>#}
+        {#            </ul>#}
+        {#        </nav>#}
         <a class='Nav-about' href="/about/">о проекте</a>
     </header>
 {% endmacro %}
