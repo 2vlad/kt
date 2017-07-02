@@ -2,10 +2,10 @@
 
 @{c} {
     padding-left: 30px;
-    height: 50px;
+    height: 65px;
     background-color: #303030;
 
-    @media (max-width: 765px) {
+    @media (max-width: 768px) {
         display: flex;
         justify-content: center;
         padding-left: 0;
@@ -13,7 +13,7 @@
 
     &-title {
         position: relative;
-        padding-top: 5px;
+        padding-top: 11px;
         padding-bottom: 5px;
         width: 130px;
         left: 10px;
@@ -23,24 +23,28 @@
 
     &-titleLink {
         text-decoration: none;
+
+        @media (max-width: 678px) {
+            margin-right: 6%;
+        }
     }
 
     &-subtitle {
         position: absolute;
         width: 210px;
-        //font-weight: bold;
         color: white;
         text-align: left;
-        font-size: 12px;
-        left: 175px;
-        top: 12px;
+        font-size: 14px;
+        left: 195px;
+        top: 16px;
 
-        @media (max-width: 765px) {
+        @media (max-width: 768px) {
             position: relative;
             left: 0;
+            top: 18px;
             width: 150px;
             text-align: center;
-            font-size: 12px;
+            font-size: 13px;
         }
     }
 
@@ -57,7 +61,7 @@
             width: 140px;
         }
 
-        //@media (max-width: 765px) {
+        //@media (max-width: 768px) {
         //    width: 160px;
         //}
     }
@@ -65,7 +69,7 @@
     &-logoBox svg {
         width: 60%;
         position: relative;
-        top: -47px;
+        top: -40px;
         left: -38px;
 
         @media (max-width: 375px) {
@@ -75,7 +79,7 @@
             height: 40px;
         }
 
-        @media (max-width: 765px) {
+        @media (max-width: 768px) {
             position: absolute;
             left: 0;
             top: 7px;
@@ -88,7 +92,7 @@ nav {
     position: absolute;
     display: flex;
     top: 0;
-    padding-top: 16px;
+    padding-top: 22px;
     right: 70px;
     color: white;
 
@@ -96,7 +100,7 @@ nav {
         display: none;
     }
 
-    @media (max-width: 765px) {
+    @media (max-width: 768px) {
         display: none;
     }
 }
@@ -111,7 +115,7 @@ nav ul {
         display: none;
     }
 
-    @media (max-width: 765px) {
+    @media (max-width: 768px) {
         display: none;
     }
 }

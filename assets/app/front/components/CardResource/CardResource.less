@@ -11,11 +11,15 @@
 
     &:hover {
         background-color: #ebebeb;
-        //box-shadow: 1px 1px 2px 1px rgba(140, 140, 140, 0.2);
     }
 
-    @media (max-width: 765px) {
+    @media (max-width: 768px) {
         max-width: 85vw;
+    }
+
+    @media (min-width: 768px) and (max-width: 860px) {
+        max-width: 95vw;
+        padding: 9px 0 9px 0;
     }
 
     &-link {
@@ -30,7 +34,7 @@
         font-size: 13px;
         font-weight: bold;
 
-        @media (max-width: 765px) {
+        @media (max-width: 768px) {
             padding: 2px 0 0 0;
             position: relative;
             left: -11px;
@@ -44,21 +48,30 @@
         display: flex;
         width: 90%;
 
-        @media (max-width: 765px) {
+        @media (max-width: 768px) {
             display: block;
+        }
+
+        @media (min-width: 768px) and (max-width: 860px) {
+            display: flex;
+            font-size: 15px;
         }
     }
 
     &-mobile--extraInfoBox {
         display: none;
 
-        @media (max-width: 765px) {
+        @media (max-width: 768px) {
             display: flex;
+        }
+
+        @media (min-width: 768px) and (max-width: 860px) {
+            min-width: 25%;
         }
 
         &---typeOfResource {
             padding: 0 10px 0 10px;
-            min-width: 15%;
+            //min-width: 15%;
             font-size: 13px;
             padding-left: 0px;
             color: #acacac;
@@ -80,7 +93,7 @@
         font-size: 13px;
         color: #acacac;
 
-        @media (max-width: 765px) {
+        @media (max-width: 768px) {
             display: none;
             padding-left: 0px;
             width: 100%;
@@ -93,7 +106,7 @@
     &-isFree {
         padding: 0 10px 0 10px;
 
-        @media (max-width: 765px) {
+        @media (max-width: 768px) {
             width: 100%;
             padding: 0 10px 0 0px;
         }
@@ -103,10 +116,16 @@
         width: 50%;
         min-width: 50%;
 
-        @media (max-width: 765px) {
+        @media (max-width: 768px) {
             width: 100%;
             padding: 0 10px 0 0px;
             font-size: 17px;
+        }
+
+        @media (min-width: 768px) and (max-width: 860px) {
+            width: 60%;
+            min-width: 60%;
+            padding: 0 10px 0 10px;
         }
     }
 
@@ -114,9 +133,14 @@
         width: 25%;
         min-width: 25%;
 
-        @media (max-width: 765px) {
+        @media (max-width: 768px) {
             padding: 10px 0 5px 0;
             width: 100%;
+        }
+
+        @media (min-width: 768px) and (max-width: 860px) {
+            min-width: 20%;
+            padding: 0 0 0 10px;
         }
     }
 
@@ -135,7 +159,7 @@
         min-width: 15%;
         font-size: 13px;
 
-        @media (max-width: 765px) {
+        @media (max-width: 768px) {
             display: none;
             width: 100%;
             padding-left: 0;

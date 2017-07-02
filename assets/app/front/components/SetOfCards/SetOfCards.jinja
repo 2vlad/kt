@@ -4,7 +4,13 @@
 
 {% macro SetOfCards(data={}, cards={}) %}
     <div class="SetOfCards">
-        <input class="SetOfCards-search" type="text" id="search" placeholder="search..."/>
+        <div class="SetOfCards-searchBox">
+            <input class="SetOfCards-search" type="text" id="search" placeholder="search"/>
+            <div class="SetOfCards-glass">
+                {% call macros.svgSprite('glass') %}{% endcall %}
+            </div>
+        </div>
+
         <div class="SetOfCards-cards">
             {% for card in cards %}
                 {{ Card2(data=card) }}

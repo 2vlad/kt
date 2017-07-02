@@ -3,33 +3,84 @@
 @{c} {
     margin-top: 30px;
 
+    @media (max-width: 325px) {
+        margin-top: 40px;
+    }
+
     &-search {
-        margin: 60px auto 50px auto;
         width: 30%;
         display: block;
-        min-width: 450px;
         max-width: 380px;
         height: 50px;
         border: none;
-        font-size: 20px;
+        border-radius: 5px;
+        font-size: 24px;
         padding-left: 20px;
         box-shadow: 1px 1px 4px 1px rgba(140, 140, 140, .5);
 
-        @media (max-width: 375px) {
+        @media (max-width: 325px) {
+            min-width: 260px;
+        }
+
+        @media (min-width: 326px) and (max-width: 375px) {
             margin: 40px auto 25px auto;
-            width: 250px;
-            min-width: 200px;
-            height: 35px;
-            font-size: 15px;
+            width: 280px;
+            height: 50px;
+            font-size: 20px;
             -webkit-appearance: none;
         }
 
-        @media (max-width: 765px) {
+        @media (min-width: 376px) and (max-width: 768px) {
             margin: 40px auto 30px auto;
             min-width: 300px;
-            height: 40px;
-            font-size: 18px;
+            height: 50px;
+            font-size: 22px;
         }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &-searchBox {
+        display: flex;
+        justify-content: center;
+        margin: 60px auto 50px auto;
+
+        @media (max-width: 325px) {
+            margin: 0 auto 30px auto;
+        }
+
+        @media (min-width: 326px) and (max-width: 678px) {
+            margin: 0 auto 20px auto;
+        }
+    }
+
+    &-glass {
+        position: absolute;
+        top: 13%;
+        left: 60%;
+
+        @media (max-width: 325px) {
+            top: 8.1%;
+            left: 77%;
+        }
+
+        @media (min-width: 326px) and (max-width: 375px) {
+            top: 10.1%;
+            left: 77%;
+        }
+
+        @media (min-width: 376px) and (max-width: 678px) {
+            top: 10.1%;
+            left: 75%;
+        }
+    }
+
+    &-glass svg {
+        width: 27px;
+        height: 27px;
+        fill: #3b3b3b;
     }
 
     &-cards {
@@ -37,7 +88,7 @@
         justify-content: center;
         flex-wrap: wrap;
 
-        @media (max-width: 375px) {
+        @media (max-width: 768px) {
             display: block;
         }
     }
