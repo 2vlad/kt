@@ -22,7 +22,7 @@ module.exports = Base.extend({
                 if ($(this)
                         .text()
                         .toLowerCase()
-                        .indexOf($(this)
+                        .indexOf($(_this)
                             .val()
                             .toLowerCase()) == -1) {
                     $(this).hide();
