@@ -40,10 +40,15 @@
         &:focus {
             outline: none;
         }
+
+        //&:focus @{c}-glass svg {
+        //    opacity: 0;
+        //}
     }
 
     &-searchBox {
         display: flex;
+        position: relative;
         justify-content: center;
         margin: 60px auto 50px auto;
 
@@ -51,29 +56,18 @@
             margin: 0 auto 30px auto;
         }
 
-        @media (min-width: 326px) and (max-width: 678px) {
+        @media (min-width: 326px) and (max-width: 768px) {
             margin: 0 auto 20px auto;
         }
     }
 
     &-glass {
-        position: absolute;
-        top: 13%;
-        left: 60%;
+        position: relative;
+        left: -43px;
+        top: 12px;
 
-        @media (max-width: 325px) {
-            top: 8.1%;
-            left: 77%;
-        }
-
-        @media (min-width: 326px) and (max-width: 375px) {
-            top: 10.1%;
-            left: 77%;
-        }
-
-        @media (min-width: 376px) and (max-width: 678px) {
-            top: 10.1%;
-            left: 75%;
+        @media (max-width: 768px) {
+            display: none;
         }
     }
 
@@ -84,9 +78,9 @@
     }
 
     &-cards {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
+        //display: flex;
+        //justify-content: center;
+        //flex-wrap: wrap;
 
         @media (max-width: 768px) {
             display: block;
