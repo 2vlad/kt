@@ -11,6 +11,10 @@
         <div class="Nav-aboutBox">
             <a class='Nav-about Nav-{{ mods }}' href="/about/">о проекте</a>
         </div>
-        {#        <div class="Nav-version">β</div>#}
+{#        <a class="Nav-button">#}
+            <a href="/about/" class="Nav-info Nav-{{ mods }}">
+                {% call macros.svgSprite('info') %}{% endcall %}
+            </a>
+{#        </a>#}
     </header>
 {% endmacro %}

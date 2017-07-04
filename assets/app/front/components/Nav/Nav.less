@@ -44,6 +44,7 @@
 
     &-titleLink {
         text-decoration: none;
+        height: 65px;
 
         @media (max-width: 768px) {
             margin-right: 6%;
@@ -107,11 +108,13 @@
         }
 
         @media (max-width: 768px) {
-            display: flex;
+            display: none;
+            //display: flex;
             align-items: center;
             top: 0;
             right: 0;
             float: none;
+            font-size: 16px;
         }
     }
 
@@ -122,13 +125,33 @@
         font-size: 18px;
     }
 
+    &-info {
+        position: absolute;
+        right: 0;
+        height: 65px;
+        width: 50px;
+        fill: white;
+        color: #fff;
+        transition: opacity .4s ease;
+        margin-right: 20px;
+
+        svg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 24px;
+            height: 24px;
+            margin: auto;
+        }
+
+        &:hover {
+            opacity: .7;
+        }
+    }
+
     &-onAboutPage {
         display: none;
-
-        @media (max-width: 768px) {
-            display: block;
-            opacity: 0;
-        }
     }
 }
 
