@@ -22,6 +22,10 @@ module.exports = Base.extend({
 
         var numOfCards = $('.Card2').length;
 
+        // console.log($(".Card2").filter(function () {
+        //     return $(this).css('display') === 'block'
+        // }).length);
+
         // Write on keyup event of keyword input element
         $('#search').keyup(function () {
             _this = this;
@@ -32,17 +36,25 @@ module.exports = Base.extend({
                         .toLowerCase()
                         .indexOf($(_this)
                             .val()
-                            .toLowerCase()) == -1) {
+                            .toLowerCase()) === -1) {
                     $(this).hide();
-                    // for (i = 0; i < numOfCards; i++) {
-                    //     if ($('.Card2')[i].attr('display') == 'none') {
-                    //
-                    //     }
-                    // }
                 } else {
                     $(this).show();
                 }
             });
+            for (i = 0; i < numOfCards; i++) {
+                // console.log($($('.Card2')[i]).css('display'));
+                // $('.SetOfCards-nothingFound').show();
+                var anyCardShown = $('.Card2').filter(function () {
+                        return $(this).css('display') === 'block';
+                    }).length > 0;
+
+                if (!anyCardShown) {
+                    $('.SetOfCards-nothingFound').show();
+                } else {
+                    $('.SetOfCards-nothingFound').hide();
+                }
+            }
         });
     }
 });

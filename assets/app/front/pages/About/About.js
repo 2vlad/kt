@@ -8,8 +8,6 @@ module.exports = Backbone.View.extend({
 
     initialize: function () {
 
-        console.log('test');
-
         imageArray = [
             '/static/img/head_1.png',
             '/static/img/head_2.png',
