@@ -7,7 +7,8 @@ var NotFound = require('front/pages/NotFound/NotFound');
 
 module.exports = Backbone.Router.extend({
     routes: {
-        '': 'index'
+        '': 'index',
+        'about/': 'about'
     },
 
     index: function () {

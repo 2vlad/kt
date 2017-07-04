@@ -4,6 +4,8 @@ var Base = require('front/components/Base/Base');
 var Button = require('front/components/Button/Button');
 var Card2 = require('front/components/Card2/Card2');
 var Nav = require('front/components/Nav/Nav');
+var Footer = require('front/components/Footer/Footer');
+var About = require('front/pages/About/About');
 
 require('./Index.less');
 
@@ -14,6 +16,8 @@ module.exports = Base.extend({
         this.card2 = new Card2();
         this.nav = new Nav();
         this.button = new Button();
+        this.footer = new Footer();
+        this.about = new About();
         this.$('.Index-button').html(this.button.render().el);
 
         var numOfCards = $('.Card2').length;

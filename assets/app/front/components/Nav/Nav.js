@@ -3,7 +3,7 @@ var Backbone = require('backbone');
 
 module.exports = Backbone.View.extend({
 
-    el: '.Nav',
+    el: 'body',
 
     initialize: function () {
 
@@ -16,5 +16,6 @@ module.exports = Backbone.View.extend({
         random = Math.ceil(Math.random() * 3);
 
         $('.Nav').css('background-image', 'url(' + imageArray[random - 1] + ')');
+        // $('.Footer').css('background-image', 'url(' + imageArray[random - 1] + ')');
     }
 });
