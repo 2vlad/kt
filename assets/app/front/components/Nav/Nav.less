@@ -9,7 +9,8 @@
 
     @media (max-width: 768px) {
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
+        align-items: center;
         padding-left: 0;
     }
 
@@ -21,6 +22,12 @@
         left: 10px;
         font-size: 35px;
         color: white;
+
+        @media (max-width: 768px) {
+            padding: 0;
+            width: auto;
+            left: 0;
+        }
     }
 
     &-titleLink {
@@ -41,6 +48,7 @@
         top: 16px;
 
         @media (max-width: 768px) {
+            display: none;
             position: relative;
             left: 0;
             top: 18px;
@@ -48,10 +56,6 @@
             text-align: center;
             font-size: 13px;
         }
-    }
-
-    &-onAboutPage {
-        display: none;
     }
 
     &-logoBox {
@@ -99,7 +103,20 @@
         }
 
         @media (max-width: 650px) {
-            display: none;
+            display: flex;
+            align-items: center;
+            top: 0;
+            right: 0;
+            float: none;
+        }
+    }
+
+    &-onAboutPage {
+        display: none;
+
+        @media (max-width: 768px) {
+            display: block;
+            opacity: 0;
         }
     }
 }

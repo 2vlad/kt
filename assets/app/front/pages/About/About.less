@@ -5,11 +5,23 @@
     margin-top: 100px;
     display: flex;
 
+    @media (max-width: 768px) {
+        display: block;
+        margin-top: 50px;
+        padding: 0 20px 0 40px;
+    }
+
     &-title {
         padding-left: 50px;
         text-align: left;
         font-size: 30px;
         width: 30%;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            padding-bottom: 10px;
+            padding-left: 0;
+        }
     }
 
     &-text {
