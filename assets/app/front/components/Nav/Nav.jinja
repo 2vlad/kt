@@ -2,10 +2,15 @@
 
 {% macro Nav(mods='') %}
     <header class="Nav">
-        <a href="/" class="Nav-titleLink">
-            <div class='Nav-title'>kompass</div>
-        </a>
-        <div class='Nav-subtitle'>собираем проверенные<br> учебные материалы</div>
-        <a class='Nav-about Nav-{{ mods }}' href="/about/">о проекте</a>
+        <div class="Nav-titleBox">
+            <a href="/" class="Nav-titleLink">
+                <div class='Nav-title'>kompass</div>
+                <div class='Nav-subtitle'>собираем проверенные<br> учебные материалы</div>
+            </a>
+        </div>
+        <div class="Nav-aboutBox">
+            <a class='Nav-about Nav-{{ mods }}' href="/about/">о проекте</a>
+        </div>
+        {#        <div class="Nav-version">β</div>#}
     </header>
 {% endmacro %}
