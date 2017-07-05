@@ -56,7 +56,7 @@ class CardListView(BaseView):
         context = super(CardListView, self).get_context_data(**kwargs)
 
         context.update({
-            'cardList': Card.export_control_all(),
+            'cardList': Card.export_control_all()
         })
 
         return context

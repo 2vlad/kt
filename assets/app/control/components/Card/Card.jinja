@@ -18,8 +18,18 @@
         <div class='Form-row'>
             {{ Input(label='Expert position', name='position', value=model.position) }}
         </div>
+        <div class='Form-row'>
+            {{ Input(label='Link to expert', name='expert_link', value=model.expert_link) }}
+        </div>
         <div class="Form-row">
-            {{ Textarea(label='Background', name='background', id='background', value=model.background, modifiers=['noToolbar']) }}
+            {{ Textarea(label='Recommended background', name='background', id='background', value=model.background, modifiers=['noToolbar']) }}
+        </div>
+        <div class="Form-row Service-onMain">
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="on-main">
+                <input type="checkbox" id="on-main" class="mdl-checkbox__input" name="onMain"
+                       {% if model.onMain %}checked{% endif %}/>
+                <span class="mdl-checkbox__label">Publish on main page</span>
+            </label>
         </div>
         <div class="Form-row Card-program">
             <div class="Card-line"></div>

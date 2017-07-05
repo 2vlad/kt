@@ -154,8 +154,10 @@ class Card(Base):
 
     expert = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Expert'))
     position = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Position'))
+    expert_link = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Author Link'))
 
     background = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Background'))
+    onMain = models.BooleanField(blank=True, default=True, verbose_name=u'On main page')
 
     @classmethod
     def import_item(cls, data, parent=None):
@@ -203,8 +205,10 @@ class Card(Base):
             'definition': self.definition,
             'expert': self.expert,
             'position': self.position,
+            'expert_link': self.expert_link,
             'background': self.background,
-            'program': Source.export_control_all(field_id=self.id)
+            'program': Source.export_control_all(field_id=self.id),
+            'onMain': self.onMain
         })
 
         return data
@@ -218,8 +222,10 @@ class Card(Base):
             'definition': self.definition,
             'expert': self.expert,
             'position': self.position,
+            'expert_link': self.expert_link,
             'background': self.background,
-            'program': Source.export_control_all(field_id=self.id)
+            'program': Source.export_control_all(field_id=self.id),
+            'onMain': self.onMain
         })
 
         return data
@@ -231,7 +237,6 @@ class Source(Base):
     source_title = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Title'))
     source_author = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Author'))
 
-    source_format = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Format'))
     source_type = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Type'))
     source_length = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Length'))
     source_free = models.BooleanField(blank=True, default=True, verbose_name=u'Is free')
