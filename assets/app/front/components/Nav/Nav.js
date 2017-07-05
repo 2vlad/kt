@@ -7,15 +7,17 @@ module.exports = Backbone.View.extend({
 
     initialize: function () {
 
-        imageArray = [
-            '/static/img/head_1.png',
-            '/static/img/head_2.png',
-            '/static/img/head_3.png'
+        storyArray = [
+            'story-1',
+            'story-2',
+            'story-3',
+            'story-4',
+            'story-5',
+            'story-6'
         ];
 
-        random = Math.ceil(Math.random() * 3);
+        random = Math.ceil(Math.random() * 6);
 
-        $('.Nav').css('background-image', 'url(' + imageArray[random - 1] + ')');
-        // $('.Footer').css('background-image', 'url(' + imageArray[random - 1] + ')');
+        $('.Nav').addClass(storyArray[random - 1]);
     }
 });

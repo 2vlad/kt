@@ -22,9 +22,6 @@ module.exports = Base.extend({
 
         var numOfCards = $('.Card2').length;
 
-        // console.log($(".Card2").filter(function () {
-        //     return $(this).css('display') === 'block'
-        // }).length);
 
         // Write on keyup event of keyword input element
         $('#search').keyup(function () {
@@ -43,11 +40,9 @@ module.exports = Base.extend({
                 }
             });
             for (i = 0; i < numOfCards; i++) {
-                // console.log($($('.Card2')[i]).css('display'));
-                // $('.SetOfCards-nothingFound').show();
                 var anyCardShown = $('.Card2').filter(function () {
-                        return $(this).css('display') === 'block';
-                    }).length > 0;
+                    return $(this).css('display') === 'block';
+                }).length > 0;
 
                 if (!anyCardShown) {
                     $('.SetOfCards-nothingFound').show();
