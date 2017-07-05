@@ -6,18 +6,8 @@ module.exports = Backbone.View.extend({
     el: 'body',
 
     initialize: function () {
+        random = Math.ceil(Math.random() * 22) - 1;
 
-        storyArray = [
-            'story-1',
-            'story-2',
-            'story-3',
-            'story-4',
-            'story-5',
-            'story-6'
-        ];
-
-        random = Math.ceil(Math.random() * 6);
-
-        $('.Nav').addClass(storyArray[random - 1]);
+        $('.Nav').addClass('story-' + random);
     }
 });
