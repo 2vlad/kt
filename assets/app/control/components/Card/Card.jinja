@@ -24,13 +24,13 @@
         <div class="Form-row">
             {{ Textarea(label='Recommended background', name='background', id='background', value=model.background, modifiers=['noToolbar']) }}
         </div>
-        <div class="Form-row Service-onMain">
-            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="on-main">
-                <input type="checkbox" id="on-main" class="mdl-checkbox__input" name="onMain"
-                       {% if model.onMain %}checked{% endif %}/>
-                <span class="mdl-checkbox__label">Publish on main page</span>
-            </label>
-        </div>
+{#        <div class="Form-row Service-onMain">#}
+{#            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="on-main">#}
+{#                <input type="checkbox" id="on-main" class="mdl-checkbox__input" name="onMain"#}
+{#                       {% if model.onMain %}checked{% endif %}/>#}
+{#                <span class="mdl-checkbox__label">Publish on main page</span>#}
+{#            </label>#}
+{#        </div>#}
         <div class="Form-row Card-program">
             <div class="Card-line"></div>
             <label class="Card-label">Sources</label>
