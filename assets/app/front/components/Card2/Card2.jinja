@@ -33,16 +33,20 @@
                     {% endfor %}
                 </div>
 
-                <a href="{{ data.expert_link }}" class="Card2-expertLink">
-                    <div class="Card2-expertTitle">
-                        {% if data.expert %}
-                            <div class="Card2-expertName">{{ data.expert }}</div>
-                        {% endif %}
-                        {% if data.position %}
-                            <div class="Card2-expertPosition">&nbsp;{{ data.position|safe }}</div>
-                        {% endif %}
-                    </div>
-                </a>
+                {% if data.expert_link %}
+                    <a href="{{ data.expert_link }}" class="Card2-expertLink">
+                {% endif %}
+                <div class="Card2-expertTitle">
+                    {% if data.expert %}
+                        <div class="Card2-expertName">{{ data.expert }}</div>
+                    {% endif %}
+                    {% if data.position %}
+                        <div class="Card2-expertPosition">&nbsp;{{ data.position|safe }}</div>
+                    {% endif %}
+                </div>
+                {% if data.expert_link %}
+                    </a>
+                {% endif %}
             </div>
         </div>
     </div>
