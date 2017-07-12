@@ -10,25 +10,7 @@
             <div class="Card2-field">
                 <div class="Card2-fieldName">{{ data.field }}</div>
                 <div class="Card2-fieldDescription">{{ data.definition|safe }}</div>
-            </div>
 
-            {# правая колонка карточки #}
-            <div class="Card2-expert">
-                <div class="Card2-expertTitle">
-                    {% if data.expert %}
-                        <div class="Card2-expertName">{{ data.expert }}</div>
-                    {% endif %}
-                    {% if data.position %}
-                        <div class="Card2-expertPosition">&nbsp;{{ data.position|safe }}</div>
-                    {% endif %}
-                </div>
-                {# все ресурсы #}
-                <div class="Card2-resourcesContainer">
-                    {# тип ресурсов #}
-                    {% for source in data.program %}
-                        {{ CardResource(data=source) }}
-                    {% endfor %}
-                </div>
                 {% if data.background %}
                     <div class="Card2-backgroundBox">
                         <div class="Card2-backgroundTitle">Рекомендуемый бэкграунд</div>
@@ -39,6 +21,26 @@
                         </div>
                     </div>
                 {% endif %}
+            </div>
+
+            {# правая колонка карточки #}
+            <div class="Card2-expert">
+                {# все ресурсы #}
+                <div class="Card2-resourcesContainer">
+                    {# тип ресурсов #}
+                    {% for source in data.program %}
+                        {{ CardResource(data=source) }}
+                    {% endfor %}
+                </div>
+
+                <div class="Card2-expertTitle">
+                    {% if data.expert %}
+                        <div class="Card2-expertName">{{ data.expert }}</div>
+                    {% endif %}
+                    {% if data.position %}
+                        <div class="Card2-expertPosition">&nbsp;{{ data.position|safe }}</div>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>
