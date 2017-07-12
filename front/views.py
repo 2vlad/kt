@@ -2,6 +2,7 @@
 
 from django.views.generic import TemplateView
 import data
+import random
 
 from front.models import About, Card
 
@@ -20,9 +21,14 @@ class IndexView(BaseView):
         context = super(IndexView, self).get_context_data(**kwargs)
         context.update(data.index)
 
+        cards = Card.export_front_all()
+        random.shuffle(cards)
+
+        print(cards)
+
         context.update({
             'data': data.index,
-            'cards': Card.export_front_all()
+            'cards': cards
         })
 
         return context
