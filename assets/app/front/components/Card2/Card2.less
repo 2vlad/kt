@@ -99,11 +99,22 @@
         }
     }
 
+    &-expertLink {
+        text-decoration: none;
+
+        &:hover @{c}-expertPosition {
+            color: black;
+        }
+    }
+
     &-expertPosition {
         color: #acacac;
+
+        transition: color .3s;
     }
 
     &-expertTitle {
+        color: #000;
         padding-left: 5px;
         display: flex;
         font-size: 17px;
