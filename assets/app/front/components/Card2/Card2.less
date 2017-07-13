@@ -102,22 +102,25 @@
     &-expertLink {
         text-decoration: none;
 
+        &:hover @{c}-expertTitle,
         &:hover @{c}-expertPosition {
             color: black;
         }
     }
 
     &-expertPosition {
-        color: #acacac;
+        color: #636363;
 
         transition: color .3s;
     }
 
     &-expertTitle {
-        color: #000;
         padding-left: 5px;
         display: flex;
-        font-size: 17px;
+        font-size: 15px;
+        color: #636363;
+
+        transition: color .3s;
 
         @media (max-width: 768px) {
             //display: none;
