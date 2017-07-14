@@ -8,6 +8,7 @@ module.exports = Backbone.View.extend({
     initialize: function () {
         random = Math.ceil(Math.random() * 22) - 1;
 
-        $('.Nav').addClass('story-' + random);
+        // $('.Nav').addClass('story-' + random);
+        $('.Nav').addClass('story-5');
     }
 });
