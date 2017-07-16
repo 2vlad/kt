@@ -4,15 +4,21 @@ var _ = require('underscore');
 var Index = require('front/pages/Index/Index');
 var About = require('front/pages/About/About');
 var NotFound = require('front/pages/NotFound/NotFound');
+var CardPage = require('front/pages/CardPage/CardPage');
 
 module.exports = Backbone.Router.extend({
     routes: {
         '': 'index',
-        'about/': 'about'
+        'about/': 'about',
+        'cards/(:id/)': 'card'
     },
 
     index: function () {
         this.activate(Index);
+    },
+
+    card: function () {
+        this.activate(CardPage);
     },
 
     about: function () {

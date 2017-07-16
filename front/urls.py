@@ -8,6 +8,8 @@ from . import views_utils
 urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name='index'),
     url(r'^about/$', views.AboutView.as_view(), name='about'),
+
+    url(r'^cards/(?P<obj_id>\d+)/$', views.CardView.as_view(), name='card'),
 ]
 
 if settings.DEBUG:

@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 
+from django.http import Http404
 from django.views.generic import TemplateView
 import data
 import random
 
 from front.models import About, Card
+
 
 # Базовая вьюха, от которой наследуются остальные
 class BaseView(TemplateView):
@@ -42,6 +44,29 @@ class AboutView(BaseView):
 
         context.update({
             'about': About.get_or_create().export_front()
+        })
+
+        return context
+
+
+class CardView(BaseView):
+    template_name = 'front/pages/CardPage/CardPage.jinja'
+
+    def get_context_data(self, **kwargs):
+        context = super(CardView, self).get_context_data(**kwargs)
+
+        obj_id = kwargs.get('obj_id')
+
+        if obj_id:
+            try:
+                obj = Card.objects.get(id=obj_id).export_front()
+            except Card.DoesNotExist:
+                raise Http404
+        else:
+            obj = None
+
+        context.update({
+            'data': obj,
         })
 
         return context
