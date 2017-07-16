@@ -29,9 +29,9 @@ module.exports = Backbone.View.extend({
 
         $('.CardItem-subtitle')
             .each(function (item) {
-                if ($(this).text().length > 30) {
+                if ($(this).text().length > 20) {
                     var str = $(this).text();
-                    str = str.substr(0, 30);
+                    str = str.substr(0, 20);
                     $(this).text(str + '...');
                 }
             });
