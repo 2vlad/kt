@@ -5,6 +5,9 @@ require('./CardItem.less');
 
 
 module.exports = AbstractItem.extend({
+
+    el: '.CardItem',
+
     template: template,
 
     events: {

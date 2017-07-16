@@ -26,5 +26,14 @@ module.exports = Backbone.View.extend({
 
     render: function () {
         this.cardList.render();
+
+        $('.CardItem-subtitle')
+            .each(function (item) {
+                if ($(this).text().length > 30) {
+                    var str = $(this).text();
+                    str = str.substr(0, 30);
+                    $(this).text(str + '...');
+                }
+            });
     }
 });
