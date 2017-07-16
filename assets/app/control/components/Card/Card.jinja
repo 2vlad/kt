@@ -7,22 +7,22 @@
 <div class="Card">
     <form class='Form'>
         <div class='Form-row'>
-            {{ Input(label='Field name', name='field', value=model.field) }}
+            {{ Input(label='Название области', name='field', value=model.field) }}
         </div>
         <div class='Form-row'>
-            {{ Textarea(label='Definition of the field', name='definition', value=model.definition, id='definition', modifiers=['noToolbar']) }}
+            {{ Textarea(label='Определение области', name='definition', value=model.definition, id='definition', modifiers=['noToolbar']) }}
         </div>
         <div class='Form-row Card-expertBlock'>
-            {{ Input(label='Expert name', name='expert', value=model.expert) }}
+            {{ Input(label='Обращение', name='expert', value=model.expert) }}
         </div>
         <div class='Form-row'>
-            {{ Input(label='Expert position', name='position', value=model.position) }}
+            {{ Input(label='Эксперт и позиция', name='position', value=model.position) }}
         </div>
         <div class='Form-row'>
-            {{ Input(label='Link to expert', name='expert_link', value=model.expert_link) }}
+            {{ Input(label='Ссылка на контрибьютора', name='expert_link', value=model.expert_link) }}
         </div>
         <div class="Form-row">
-            {{ Textarea(label='Recommended background', name='background', id='background', value=model.background, modifiers=['noToolbar']) }}
+            {{ Textarea(label='Рекомендуемый бэкграунд', name='background', id='background', value=model.background, modifiers=['noToolbar']) }}
         </div>
 {#        <div class="Form-row Service-onMain">#}
 {#            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="on-main">#}
