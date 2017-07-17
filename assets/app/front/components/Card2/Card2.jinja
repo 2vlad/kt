@@ -48,6 +48,12 @@
                     </a>
                 {% endif %}
             </div>
+
+            <a href="/cards/{{ data.id }}" class="Card2-shareLink">
+                <span class="Card2-share">
+                    {% call macros.svgSprite('upload') %}{% endcall %}
+                </span>
+            </a>
         </div>
     </div>
 {% endmacro %}
