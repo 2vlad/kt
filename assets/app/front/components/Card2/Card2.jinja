@@ -49,11 +49,14 @@
                 {% endif %}
             </div>
 
-{#            <a data-clipboard-text="http://kmpss.io/cards/{{ data.id }}/" class="Card2-shareLink">#}
-{#                <span class="Card2-share">#}
-{#                    {% call macros.svgSprite('upload') %}{% endcall %}#}
-{#                </span>#}
-{#            </a>#}
+            <div class="Card2-shareWrap">
+                <a data-clipboard-text="/cards/{{ data.id }}/" class="Card2-shareLink btn">
+                <span class="Card2-share">
+                    {% call macros.svgSprite('upload') %}{% endcall %}
+                </span>
+                </a>
+            <div class="Card2-shareMessageBox">Ссылка скопирована</div>
+            </div>
         </div>
     </div>
 {% endmacro %}

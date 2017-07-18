@@ -19,6 +19,7 @@
 
     &-title {
         display: flex;
+        position: relative;
         padding: 0 20px 0 20px;
         font-size: 25px;
         line-height: 45px;
@@ -162,10 +163,16 @@
         color: #505050;
     }
 
+    &-shareWrap {
+        position: absolute;
+        right: -60px;
+        top: 0;
+    }
+
     &-shareLink {
         width: 20px;
-        position: absolute;
         right: 20px;
+        position: relative;
     }
 
     &-share {
@@ -186,6 +193,32 @@
             height: 100%;
             fill: grey;
             transition: all .3s ease;
+        }
+    }
+
+    &-shareMessageBox {
+        opacity: 0;
+        transition: all .3s ease;
+
+        position: relative;
+        padding: 0 11px;
+        top: -12px;
+        left: -12px;
+
+        font-size: 13px;
+        line-height: 23px;
+        border-radius: 4px;
+        background-color: rgba(0, 0, 0, .6);
+        color: #fff;
+
+        &--toShow {
+            opacity: 1;
+            transition: all .3s ease;
+        }
+
+        @media (max-width: 1266px) {
+            top: 11px;
+            left: -108px;
         }
     }
 }
