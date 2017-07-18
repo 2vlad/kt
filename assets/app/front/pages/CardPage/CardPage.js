@@ -14,6 +14,7 @@ module.exports = Base.extend({
     initialize: function () {
 
         this.nav = new Nav();
+        this.card2 = new Card2();
 
         var num = $('.CardResource-num');
         var card = $('.Card2-resourcesContainer');
