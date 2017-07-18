@@ -30,7 +30,8 @@ class IndexView(BaseView):
 
         context.update({
             'data': data.index,
-            'cards': cards
+            'cards': cards,
+            'about': About.get_or_create().export_front()
         })
 
         return context

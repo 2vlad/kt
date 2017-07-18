@@ -10,7 +10,14 @@ var About = require('front/pages/About/About');
 require('./Index.less');
 
 module.exports = Base.extend({
-    el: '.Index',
+    el: 'body',
+
+    events: {
+        'click .Nav-about': 'showPopup',
+        'click .Nav-info': 'showPopup',
+        'click .Index-cross': 'closePopup',
+        'click .Index-layer': 'closePopup'
+    },
 
     initialize: function () {
         this.card2 = new Card2();
@@ -41,8 +48,8 @@ module.exports = Base.extend({
             });
             for (i = 0; i < numOfCards; i++) {
                 var anyCardShown = $('.Card2').filter(function () {
-                    return $(this).css('display') === 'block';
-                }).length > 0;
+                        return $(this).css('display') === 'block';
+                    }).length > 0;
 
                 if (!anyCardShown) {
                     $('.SetOfCards-nothingFound').show();
@@ -51,5 +58,19 @@ module.exports = Base.extend({
                 }
             }
         });
+    },
+
+    showPopup: function (e) {
+        e.preventDefault();
+
+        $('.Index-popup').addClass('Index-popup--toShow');
+        $('.Index-layer').addClass('Index-layer--toShow');
+    },
+
+    closePopup: function (e) {
+        e.preventDefault();
+
+        $('.Index-popup').removeClass('Index-popup--toShow');
+        $('.Index-layer').removeClass('Index-layer--toShow');
     }
 });

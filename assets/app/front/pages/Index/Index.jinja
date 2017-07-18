@@ -14,6 +14,17 @@
 {% block content %}
     <div class="Index">
         {{ SetOfCards(data, cards) }}
+
+        <div class="Index-layer"></div>
+        <div class="Index-popup">
+            <div class="Index-popupBox">
+                <div class="Index-title">{{ about.title }}</div>
+                <div class="Index-text">{{ about.text|safe }}</div>
+            </div>
+            <span class="Index-cross">
+                {% call macros.svgSprite('cross') %}{% endcall %}
+            </span>
+        </div>
     </div>
 {% endblock %}
 

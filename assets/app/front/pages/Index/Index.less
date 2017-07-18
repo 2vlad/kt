@@ -2,4 +2,101 @@
 
 @{c} {
     overflow: hidden;
+
+    &-popup {
+        transform: translateX(150vw);
+
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 20%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 80px;
+        z-index: 10;
+
+        width: 700px;
+        //height: 400px;
+
+        text-align: left;
+        border-radius: 30px;
+        background-color: #fff;
+
+        transition: all .5s ease;
+
+        @media (max-width: 765px) {
+            top: 10%;
+            width: 95%;
+            height: auto;
+            padding-bottom: 60px;
+        }
+
+        &--toShow {
+            transform: translateX(0);
+
+            transition: all .3s ease;
+        }
+    }
+
+    &-layer {
+        //display: none;
+        opacity: 0;
+        pointer-events: none;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .5);
+
+        transition: all .3s ease;
+
+        &--toShow {
+            //display: block;
+            pointer-events: all;
+            opacity: 1;
+            transition: all .3s ease;
+        }
+    }
+
+    &-popupBox {
+        margin: 70px 0 0 90px;
+        width: 70%;
+
+        @media (max-width: 765px) {
+            margin: 40px 0 0 40px;
+        }
+    }
+
+    &-title {
+        font-size: 37px;
+    }
+
+    &-text {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+
+    &-cross {
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        right: 33px;
+        top: 29px;
+        cursor: pointer;
+
+        svg {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            fill: #aaaaaa;
+            transition: all .3s ease;
+        }
+
+        &:hover svg {
+            fill: #000;
+            transition: all .3s ease;
+        }
+    }
 }
