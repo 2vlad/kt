@@ -65,6 +65,10 @@ module.exports = Base.extend({
 
         $('.Index-popup').addClass('Index-popup--toShow');
         $('.Index-layer').addClass('Index-layer--toShow');
+        $('body').css({
+            'overflow-x': 'hidden',
+            'overflow-y': 'hidden'
+        });
     },
 
     closePopup: function (e) {
@@ -72,5 +76,9 @@ module.exports = Base.extend({
 
         $('.Index-popup').removeClass('Index-popup--toShow');
         $('.Index-layer').removeClass('Index-layer--toShow');
+        $('body').css({
+            'overflow-x': 'auto',
+            'overflow-y': 'auto'
+        });
     }
 });
