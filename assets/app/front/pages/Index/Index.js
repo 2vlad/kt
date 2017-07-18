@@ -69,11 +69,6 @@ module.exports = Base.extend({
             'overflow-x': 'hidden',
             'overflow-y': 'hidden'
         });
-
-        //DISABLING SCROLLING FOR IOS
-        document.ontouchmove = function (e) {
-            e.preventDefault();
-        };
     },
 
     closePopup: function (e) {
@@ -82,12 +77,8 @@ module.exports = Base.extend({
         $('.Index-popup').removeClass('Index-popup--toShow');
         $('.Index-layer').removeClass('Index-layer--toShow');
         $('body').css({
-            'overflow-x': 'auto',
+            'overflow-x': 'hidden',
             'overflow-y': 'auto'
         });
-
-        document.ontouchmove = function (e) {
-            return true;
-        };
     }
 });
