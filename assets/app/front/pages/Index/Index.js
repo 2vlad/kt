@@ -69,6 +69,11 @@ module.exports = Base.extend({
             'overflow-x': 'hidden',
             'overflow-y': 'hidden'
         });
+
+        //DISABLING SCROLLING FOR IOS
+        document.ontouchmove = function (e) {
+            e.preventDefault();
+        };
     },
 
     closePopup: function (e) {
@@ -80,5 +85,9 @@ module.exports = Base.extend({
             'overflow-x': 'auto',
             'overflow-y': 'auto'
         });
+
+        document.ontouchmove = function (e) {
+            return true;
+        };
     }
 });
