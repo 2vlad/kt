@@ -20,7 +20,10 @@ module.exports = Backbone.View.extend({
     },
 
     showMessage: function (e) {
-        var messageBox = $(e.target).parent().parent().siblings();
+        var messageBox = $(e.target)
+            .parent()
+            .parent()
+            .siblings();
         messageBox
             .addClass('Card2-shareMessageBox--toShow');
         setTimeout(function () {
