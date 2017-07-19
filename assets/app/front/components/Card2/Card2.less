@@ -1,3 +1,5 @@
+@import (reference) "~front/style";
+
 @c: .Card2;
 
 @{c} {
@@ -17,6 +19,14 @@
         margin: 0 0 5px 0;
     }
 
+    @media (min-width: 1400px) {
+        max-width: 1200px;
+    }
+
+    @media (min-width: 1800px) {
+        max-width: 1500px;
+    }
+
     &-title {
         display: flex;
         position: relative;
@@ -24,42 +34,31 @@
         font-size: 25px;
         line-height: 45px;
 
-        @media (max-width: 375px) {
-            display: block;
-            min-width: auto;
-        }
-
-        @media (max-width: 768px) {
+        @media @tablet {
             display: block;
         }
 
-        @media (min-width: 768px) and (max-width: 860px) {
-            padding-left: 30px;
+        @media @mobile {
             display: block;
         }
+    }
 
-        @media (max-width: 1024px) {
-            min-width: 98vw;
-            max-width: 98vw;
-        }
+    &-fieldWrap {
+        margin-right: 40px;
     }
 
     &-field {
         flex: 1;
         padding: 20px 0px 20px 20px;
 
-        @media (max-width: 768px) {
-            padding: 20px 0 10px 0;
-        }
-
-        @media (min-width: 768px) and (max-width: 860px) {
+        @media @tablet {
             display: flex;
-            padding-bottom: 0;
         }
     }
 
     &-fieldName {
         flex-grow: 1;
+        font-size: 30px;
         line-height: 32px;
         margin-bottom: 5px;
         text-align: left;
@@ -80,21 +79,11 @@
         width: 310px;
         font-size: 14px;
         line-height: 18px;
-
-        @media (max-width: 768px) {
-            width: 50%;
-            min-width: 280px;
-        }
-
-        @media (min-width: 768px) and (max-width: 860px) {
-            width: 70%;
-            padding-right: 20%;
-        }
     }
 
     &-expert {
         flex-grow: 5;
-        padding: 20px 0 20px 20px;
+        padding: 20px 0 20px 30px;
         font-size: 20px;
 
         @media (max-width: 768px) {
@@ -103,6 +92,9 @@
     }
 
     &-expertName {
+        font-size: 18px;
+        line-height: 22px;
+        text-align: left;
         color: #000;
     }
 
@@ -116,28 +108,27 @@
     }
 
     &-expertPosition {
-        color: #636363;
         display: flex;
-        line-height: 25px;
+
+        color: #636363;
+        line-height: 20px;
+        font-size: 14px;
         text-align: left;
-        margin-left: 10px;
         align-items: center;
+
         transition: color .3s;
     }
 
     &-expertTitle {
-        padding-left: 5px;
-        display: flex;
+        margin-top: 15px;
         font-size: 18px;
         align-items: baseline;
 
         transition: color .3s;
 
-        @media (max-width: 768px) {
-            //display: none;
-            position: relative;
-            left: -20px;
-            padding-left: 0;
+        @media @tablet {
+            width: 30%;
+            margin-left: 30px;
         }
     }
 
@@ -146,10 +137,15 @@
     }
 
     &-backgroundBox {
+        margin-top: 15px;
 
-        //@media (min-width: 768px) and (max-width: 860px) {
-        margin-top: 10px;
-        //}
+        @media @tablet {
+            width: 140px;
+        }
+
+        @media @mobile {
+            width: auto;
+        }
     }
 
     &-backgroundTitle {
@@ -168,6 +164,7 @@
 
     &-backgroundUnit {
         margin-top: 5px;
+        font-size: 14px;
     }
 
     &-shareWrap {

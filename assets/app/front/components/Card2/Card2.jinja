@@ -6,11 +6,14 @@
     <div class="Card2">
         <div class="Card2-title">
 
-            {# левая колонка карточки #}
+            {# КОЛОНКА С ТЕХНИЧЕСКОЙ ИНФОЙ #}
             <div class="Card2-field">
-                <div class="Card2-fieldName">{{ data.field }}</div>
-                <div class="Card2-fieldDescription">{{ data.definition|safe }}</div>
+                <div class="Card2-fieldWrap">
+                    <div class="Card2-fieldName">{{ data.field }}</div>
+                    <div class="Card2-fieldDescription">{{ data.definition|safe }}</div>
+                </div>
 
+                {# РЕКОМЕНДУЕМЫЙ БЭКГРАУНД #}
                 {% if data.background %}
                     <div class="Card2-backgroundBox">
                         <div class="Card2-backgroundTitle">Рекомендуемый бэкграунд</div>
@@ -21,18 +24,8 @@
                         </div>
                     </div>
                 {% endif %}
-            </div>
 
-            {# правая колонка карточки #}
-            <div class="Card2-expert">
-                {# все ресурсы #}
-                <div class="Card2-resourcesContainer">
-                    {# тип ресурсов #}
-                    {% for source in data.program %}
-                        {{ CardResource(data=source) }}
-                    {% endfor %}
-                </div>
-
+                {# КОНТРИБЬЮТОР #}
                 {% if data.expert_link %}
                     <a href="{{ data.expert_link }}" class="Card2-expertLink" target="_blank">
                 {% endif %}
@@ -49,13 +42,24 @@
                 {% endif %}
             </div>
 
+            {# КОЛОНКА С РЕСУРСАМИ #}
+            <div class="Card2-expert">
+                {# все ресурсы #}
+                <div class="Card2-resourcesContainer">
+                    {# тип ресурсов #}
+                    {% for source in data.program %}
+                        {{ CardResource(data=source) }}
+                    {% endfor %}
+                </div>
+            </div>
+
             <div class="Card2-shareWrap">
                 <a data-clipboard-text="http://kmpss.io/cards/{{ data.id }}/" class="Card2-shareLink btn">
                 <span class="Card2-share">
                     {% call macros.svgSprite('upload') %}{% endcall %}
                 </span>
                 </a>
-            <div class="Card2-shareMessageBox">Ссылка скопирована</div>
+                <div class="Card2-shareMessageBox">Ссылка скопирована</div>
             </div>
         </div>
     </div>

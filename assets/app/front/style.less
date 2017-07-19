@@ -29,8 +29,12 @@ body {
     -moz-font-feature-settings: "kern=1";
     -moz-font-feature-settings: "kern";
     -ms-font-feature-settings: "kern" 1;
-    //font-feature-settings: "kern";
-
-    //overflow-x: hidden;
-    //overflow-y: hidden;
+    font-feature-settings: "kern";
 }
+
+//responsive media width
+@mobile-320: ~"(max-width: 369px)";
+@mobile: ~"(max-width: 767px)";
+@tablet: ~"(min-width: 768px) and (max-width: 1023px)";
+@laptop: ~"(min-width: 1024px) and (max-width: 1279px)";
+@desktop: ~"(min-width: 1280px)";
