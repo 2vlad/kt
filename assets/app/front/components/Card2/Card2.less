@@ -147,12 +147,15 @@
 
     &-backgroundBox {
 
+        //@media (min-width: 768px) and (max-width: 860px) {
+        margin-top: 10px;
+        //}
     }
 
     &-backgroundTitle {
         text-align: left;
         font-size: 18px;
-        //font-weight: bold;
+        line-height: 22px;
     }
 
     &-backgroundBody {
@@ -170,13 +173,13 @@
         //top: 0;
 
         //IN THE BOTTOM OF THE CARD
-        right: 3px;
+        right: -57px;
         bottom: 25px;
     }
 
     &-shareLink {
         width: 20px;
-        right: -33px;
+        right: 20px;
         position: relative;
     }
 
@@ -196,7 +199,7 @@
         svg {
             width: 100%;
             height: 100%;
-            fill: #aaaaaa;
+            fill: #999999;
             transition: all .3s ease;
         }
     }
@@ -223,7 +226,7 @@
 
         @media (max-width: 1266px) {
             top: 11px;
-            left: -108px;
+            left: -102px;
         }
     }
 }

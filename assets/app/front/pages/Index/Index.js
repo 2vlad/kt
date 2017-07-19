@@ -77,7 +77,7 @@ module.exports = Base.extend({
         $('.Index-popup').removeClass('Index-popup--toShow');
         $('.Index-layer').removeClass('Index-layer--toShow');
         $('body').css({
-            'overflow-x': 'hidden',
+            'overflow-x': 'auto',
             'overflow-y': 'auto'
         });
     }
