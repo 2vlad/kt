@@ -25,14 +25,14 @@
             <div class="Form-row">
                 {% call Input.Input(label='Link', name='sourceLink', value=model.sourceLink) %}{% endcall %}
             </div>
-            <div class="Course-checkboxRow">
-                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect Course-checkbox"
-                       for="is-middle-{{ cid }}">
-                    <input type="checkbox" id="is-middle-{{ cid }}" class="mdl-checkbox__input" name="isMiddle"
-                           {% if model.isMiddle %}checked{% endif %}/>
-                </label>
+{#            <div class="Course-checkboxRow">#}
+{#                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect Course-checkbox"#}
+{#                       for="is-middle-{{ cid }}">#}
+{#                    <input type="checkbox" id="is-middle-{{ cid }}" class="mdl-checkbox__input" name="isMiddle"#}
+{#                           {% if model.isMiddle %}checked{% endif %}/>#}
+{#                </label>#}
 {#                <span class="mdl-checkbox__label Course-checkboxLabel">Is free?</span>#}
-            </div>
+{#            </div>#}
         </form>
     </section>
 
