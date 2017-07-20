@@ -35,5 +35,8 @@ module.exports = Backbone.View.extend({
                     $(this).text(str + '...');
                 }
             });
+
+        var num = this.$('.CardItem').length;
+        this.$('.CardListPage-numOfCards-title span').text(num);
     }
 });
