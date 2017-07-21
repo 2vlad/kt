@@ -13,7 +13,9 @@
 
         <div class="SetOfCards-cards">
             {% for card in cards %}
-                {{ Card2(data=card) }}
+                {% if card.onMain %}
+                    {{ Card2(data=card) }}
+                {% endif %}
             {% endfor %}
         </div>
 

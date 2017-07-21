@@ -7,13 +7,13 @@
         <div class="CardItem-title">{{ model.field }}</div>
         <div class="CardItem-subtitle">{{ model.position }}</div>
     </a>
-{#    <div class="CardItem-checkboxBox">#}
-{#        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect CourseItem-checkbox" for="on-main-{{ cid }}">#}
-{#            <input type="checkbox" id="on-main-{{ cid }}" class="mdl-checkbox__input" name="onMain"#}
-{#                   {% if model.onMain %}checked{% endif %}/>#}
-{#        </label>#}
-{#        <span class="mdl-checkbox__label">активный</span>#}
-{#    </div>#}
+    <div class="CardItem-checkboxBox">
+        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect CourseItem-checkbox" for="on-main-{{ cid }}">
+            <input type="checkbox" id="on-main-{{ cid }}" class="mdl-checkbox__input" name="onMain"
+                   {% if model.onMain %}checked{% endif %}/>
+        </label>
+        <span class="mdl-checkbox__label"></span>
+    </div>
     <div class="CardItem-remove">
         {% call BtnRemove.BtnRemove() %}{% endcall %}
     </div>

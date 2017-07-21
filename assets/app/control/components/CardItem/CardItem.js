@@ -29,7 +29,6 @@ module.exports = AbstractItem.extend({
         this.model.save(null, {
             complete: function (model) {
                 // app.views.spinner.off();
-                console.log('saved');
             }
         }, true);
     }

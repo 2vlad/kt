@@ -157,7 +157,7 @@ class Card(Base):
     expert_link = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Author Link'))
 
     background = models.CharField(max_length=200, blank=True, default='', verbose_name=_(u'Background'))
-    onMain = models.BooleanField(blank=True, default=True, verbose_name=u'On main page')
+    on_main = models.BooleanField(blank=True, default=True, verbose_name=u'On main page')
 
     @classmethod
     def import_item(cls, data, parent=None):
@@ -208,7 +208,7 @@ class Card(Base):
             'expert_link': self.expert_link,
             'background': self.background,
             'program': Source.export_control_all(field_id=self.id),
-            'onMain': self.onMain
+            'onMain': self.on_main
         })
 
         return data
@@ -225,7 +225,7 @@ class Card(Base):
             'expert_link': self.expert_link,
             'background': self.background,
             'program': Source.export_control_all(field_id=self.id),
-            'onMain': self.onMain
+            'onMain': self.on_main
         })
 
         return data

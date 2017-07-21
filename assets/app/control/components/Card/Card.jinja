@@ -24,12 +24,20 @@
         <div class="Form-row">
             {{ Textarea(label='Рекомендуемый бэкграунд', name='background', id='background', value=model.background, modifiers=['noToolbar']) }}
         </div>
-{#        <div class="Form-row Service-onMain">#}
-{#            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="on-main">#}
-{#                <input type="checkbox" id="on-main" class="mdl-checkbox__input" name="onMain"#}
+        {#        <div class="Form-row Service-onMain">#}
+        {#            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="on-main">#}
+        {#                <input type="checkbox" id="on-main" class="mdl-checkbox__input" name="onMain"#}
+        {#                       {% if model.onMain %}checked{% endif %}/>#}
+        {#                <span class="mdl-checkbox__label">Publish on main page</span>#}
+        {#            </label>#}
+        {#        </div>#}
+{#        <div class="CardItem-checkboxBox">#}
+{#            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect CourseItem-checkbox"#}
+{#                   for="on-main-{{ cid }}">#}
+{#                <input type="checkbox" id="on-main-{{ cid }}" class="mdl-checkbox__input" name="onMain"#}
 {#                       {% if model.onMain %}checked{% endif %}/>#}
-{#                <span class="mdl-checkbox__label">Publish on main page</span>#}
 {#            </label>#}
+{#            <span class="mdl-checkbox__label"></span>#}
 {#        </div>#}
         <div class="Form-row Card-program">
             <div class="Card-line"></div>
